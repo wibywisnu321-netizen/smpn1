@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="id">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeri Video Kegiatan sekolah</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+      min-height: 100%;
+      height: 100%;
+    }
+
+    html {
+      height: 100%;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .header h1 {
+      color: #ffffff;
+      font-size: 48px;
+      margin: 0 0 20px 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .home-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #ffffff;
+      color: #ff6b35;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .home-button:hover {
+      background-color: #fff5f0;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .home-button:active {
+      transform: translateY(0);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .video-card {
+      background-color: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      background-color: #000000;
+    }
+
+    .video-wrapper video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer;
+    }
+
+    .video-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-overlay.active {
+      display: flex;
+    }
+
+    .video-overlay video {
+      max-width: 90%;
+      max-height: 90%;
+      width: auto;
+      height: auto;
+    }
+
+    .close-overlay {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #333333;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      z-index: 1001;
+    }
+
+    .close-overlay:hover {
+      background-color: #ffffff;
+      transform: scale(1.1);
+    }
+
+    .video-info {
+      padding: 20px;
+    }
+
+    .video-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #333333;
+      margin: 0 0 12px 0;
+    }
+
+    .play-button {
+      width: 100%;
+      background-color: #ff6b35;
+      color: #ffffff;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .play-button:hover {
+      background-color: #ff5722;
+    }
+
+    .play-button.playing {
+      background-color: #666666;
+    }
+
+    .play-icon {
+      margin-right: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 36px;
+      }
+
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div id="video-overlay" class="video-overlay"><button class="close-overlay" id="close-overlay">✕</button>
+  </div>
+  <div class="container">
+   <header class="header">
+    <h1 id="page-title">Galeri Video Kegiatan Sekolah</h1><button class="home-button" id="home-button"> <span class="play-icon">🏠</span> <span id="home-button-text">Kembali ke Beranda</span> </button>
+   </header>
+   <div class="video-grid">
+    <div class="video-card">
+     <div class="video-wrapper">
+      <video id="video-1" preload="metadata"><source src="video.mp4" type="video/mp4">
+      </video>
+     </div>
+     <div class="video-info">
+      <h2 class="video-title" id="video-1-title">Pemilihan ketua dan wakil ketua osis</h2><button class="play-button" data-video="video-1"> <span class="play-icon">▶️</span> <span class="button-text">Putar Video</span> </button>
+     </div>
+    </div>
+    <div class="video-card">
+     <div class="video-wrapper">
+      <video id="video-2" preload="metadata"><source src="clinup.mp4" type="video/mp4">
+      </video>
+     </div>
+     <div class="video-info">
+      <h2 class="video-title" id="video-2-title">WORD CLEANUP DAY</h2><button class="play-button" data-video="video-2"> <span class="play-icon">▶️</span> <span class="button-text">Putar Video</span> </button>
+     </div>
+    </div>
+    
+   </div>
+  </div>
+  <script>
+    const defaultConfig = {
+      background_color: "#ff6b35",
+      button_color: "#ffffff",
+      card_color: "#ffffff",
+      text_color: "#333333",
+      accent_color: "#ff6b35",
+      font_family: "Segoe UI",
+      font_size: 16,
+      page_title: "Galeri Video",
+      home_button_text: "Kembali ke Beranda",
+      video_1_title: "Video Animasi 1",
+      video_2_title: "Video Animasi 2",
+      video_3_title: "Video Pendek 1",
+      video_4_title: "Video Pendek 2"
+    };
+
+    let config = {};
+    let currentlyPlaying = null;
+
+    async function onConfigChange(newConfig) {
+      config = newConfig;
+      
+      const customFont = config.font_family || defaultConfig.font_family;
+      const baseFontSize = config.font_size || defaultConfig.font_size;
+      const baseFontStack = 'Tahoma, Geneva, Verdana, sans-serif';
+      
+      document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+      document.body.style.background = `linear-gradient(135deg, ${config.background_color || defaultConfig.background_color} 0%, ${config.accent_color || defaultConfig.accent_color} 100%)`;
+      
+      const pageTitle = document.getElementById('page-title');
+      pageTitle.textContent = config.page_title || defaultConfig.page_title;
+      pageTitle.style.fontSize = `${baseFontSize * 3}px`;
+      pageTitle.style.fontFamily = `${customFont}, ${baseFontStack}`;
+      
+      const homeButton = document.getElementById('home-button');
+      homeButton.style.backgroundColor = config.button_color || defaultConfig.button_color;
+      homeButton.style.color = config.accent_color || defaultConfig.accent_color;
+      homeButton.style.fontSize = `${baseFontSize}px`;
+      
+      const homeButtonText = document.getElementById('home-button-text');
+      homeButtonText.textContent = config.home_button_text || defaultConfig.home_button_text;
+      
+      const videoCards = document.querySelectorAll('.video-card');
+      videoCards.forEach(card => {
+        card.style.backgroundColor = config.card_color || defaultConfig.card_color;
+      });
+      
+      const videoTitles = document.querySelectorAll('.video-title');
+      videoTitles.forEach((title, index) => {
+        const configKey = `video_${index + 1}_title`;
+        title.textContent = config[configKey] || defaultConfig[configKey];
+        title.style.color = config.text_color || defaultConfig.text_color;
+        title.style.fontSize = `${baseFontSize * 1.25}px`;
+        title.style.fontFamily = `${customFont}, ${baseFontStack}`;
+      });
+      
+      const playButtons = document.querySelectorAll('.play-button');
+      playButtons.forEach(button => {
+        if (!button.classList.contains('playing')) {
+          button.style.backgroundColor = config.accent_color || defaultConfig.accent_color;
+        }
+        button.style.fontSize = `${baseFontSize}px`;
+      });
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => config.card_color || defaultConfig.card_color,
+            set: (value) => {
+              config.card_color = value;
+              window.elementSdk.setConfig({ card_color: value });
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
+          },
+          {
+            get: () => config.accent_color || defaultConfig.accent_color,
+            set: (value) => {
+              config.accent_color = value;
+              window.elementSdk.setConfig({ accent_color: value });
+            }
+          },
+          {
+            get: () => config.button_color || defaultConfig.button_color,
+            set: (value) => {
+              config.button_color = value;
+              window.elementSdk.setConfig({ button_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            config.font_family = value;
+            window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {
+            config.font_size = value;
+            window.elementSdk.setConfig({ font_size: value });
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["page_title", config.page_title || defaultConfig.page_title],
+        ["home_button_text", config.home_button_text || defaultConfig.home_button_text],
+        ["video_1_title", config.video_1_title || defaultConfig.video_1_title],
+        ["video_2_title", config.video_2_title || defaultConfig.video_2_title],
+        ["video_3_title", config.video_3_title || defaultConfig.video_3_title],
+        ["video_4_title", config.video_4_title || defaultConfig.video_4_title]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+
+    document.getElementById('home-button').addEventListener('click', () => {
+  window.location.href = 'index.html';
+});
+
+    const videoOverlay = document.getElementById('video-overlay');
+    const closeOverlay = document.getElementById('close-overlay');
+    let overlayVideo = null;
+
+    function openVideoOverlay(video) {
+      const videoClone = video.cloneNode(true);
+      videoClone.controls = true;
+      videoClone.currentTime = video.currentTime;
+      
+      videoOverlay.innerHTML = '';
+      videoOverlay.appendChild(closeOverlay);
+      videoOverlay.appendChild(videoClone);
+      videoOverlay.classList.add('active');
+      
+      videoClone.play();
+      overlayVideo = videoClone;
+      
+      video.pause();
+    }
+
+    function closeVideoOverlay() {
+      if (overlayVideo) {
+        overlayVideo.pause();
+        overlayVideo = null;
+      }
+      videoOverlay.classList.remove('active');
+      
+      if (currentlyPlaying) {
+        const button = document.querySelector(`[data-video="${currentlyPlaying.id}"]`);
+        button.classList.remove('playing');
+        button.querySelector('.button-text').textContent = 'Putar Video';
+        button.querySelector('.play-icon').textContent = '▶️';
+        button.style.backgroundColor = config.accent_color || defaultConfig.accent_color;
+        currentlyPlaying = null;
+      }
+    }
+
+    closeOverlay.addEventListener('click', closeVideoOverlay);
+    
+    videoOverlay.addEventListener('click', (e) => {
+      if (e.target === videoOverlay) {
+        closeVideoOverlay();
+      }
+    });
+
+    const playButtons = document.querySelectorAll('.play-button');
+    
+    playButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const videoId = button.getAttribute('data-video');
+        const video = document.getElementById(videoId);
+        const buttonText = button.querySelector('.button-text');
+        const playIcon = button.querySelector('.play-icon');
+        
+        if (currentlyPlaying && currentlyPlaying !== video) {
+          currentlyPlaying.pause();
+          currentlyPlaying.currentTime = 0;
+          const otherButton = document.querySelector(`[data-video="${currentlyPlaying.id}"]`);
+          otherButton.classList.remove('playing');
+          otherButton.querySelector('.button-text').textContent = 'Putar Video';
+          otherButton.querySelector('.play-icon').textContent = '▶️';
+          otherButton.style.backgroundColor = config.accent_color || defaultConfig.accent_color;
+        }
+        
+        button.classList.add('playing');
+        buttonText.textContent = 'Memutar...';
+        playIcon.textContent = '⏸️';
+        button.style.backgroundColor = '#666666';
+        currentlyPlaying = video;
+        
+        openVideoOverlay(video);
+      });
+    });
+
+    document.querySelectorAll('video').forEach(video => {
+      video.addEventListener('ended', () => {
+        const button = document.querySelector(`[data-video="${video.id}"]`);
+        button.classList.remove('playing');
+        button.querySelector('.button-text').textContent = 'Putar Video';
+        button.querySelector('.play-icon').textContent = '▶️';
+        button.style.backgroundColor = config.accent_color || defaultConfig.accent_color;
+        currentlyPlaying = null;
+      });
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99cd7d79d799d8ca',t:'MTc2Mjg2MDk2OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
