@@ -39,8 +39,34 @@
         <div class="hidden md:block">
           <a href="#" class="nav-link" onclick="showSection('home')">Beranda🏠</a>
           <a href="#" class="nav-link" onclick="showSection('profil')">Profil👤</a>
-          <a href="#" class="nav-link" onclick="showSection('akademik')">Akademik📚</a>
-          <a href="#" class="nav-link" onclick="showSection('guru')">Guru👥</a>
+         <div class="relative inline-block group">
+  <a href="#" class="nav-link">Akademik📘</a>
+
+  <div class="absolute left-0 top-full hidden group-hover:block
+              bg-white shadow-lg rounded-md min-w-[220px] z-50">
+    <a href="#" onclick="showSection('kurikulum')" class="block px-4 py-2 hover:bg-orange-100">
+      📚 Kurikulum
+    </a>
+    <a href="#" onclick="showSection('jadwal')" class="block px-4 py-2 hover:bg-orange-100">
+      🗓️ Jadwal Pelajaran
+    </a>
+  </div>
+</div>
+    <div class="relative inline-block group">
+  <a href="#" class="nav-link" onclick="showSection('guru')">Guru👥</a>
+  
+  <div class="absolute left-0 top-full h-2 w-full"></div>
+
+  <div class="absolute left-0 top-full hidden group-hover:block
+              bg-white shadow-lg rounded-md min-w-[220px] z-50">
+    <a href="#" onclick="showSection('guru')" class="block px-4 py-2 hover:bg-orange-100">
+      👥 Daftar Guru
+    </a>
+    <a href="#" onclick="showSection('fasilitas')" class="block px-4 py-2 hover:bg-orange-100">
+      🏫 Fasilitas Sekolah
+    </a>
+  </div>
+</div>
           <a href="#" class="nav-link" onclick="showSection('galeri')">Galeri🖼️</a>
           <div class="relative inline-block group">
   <a href="#" class="nav-link">Data Siswa📊</a>
@@ -60,6 +86,9 @@
     </a>
   </div>
 </div>
+<a href="#" class="nav-link" onclick="showSection('dataalumni')">
+  Data Alumni🎓
+</a>
 
 </div>
            <a href="video.html" class="menu-btn px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:bg-gray-100">
@@ -87,6 +116,9 @@
       <a href="#" class="block nav-link" onclick="showSection('guru')">Guru</a>
       <a href="#" class="block nav-link" onclick="showSection('galeri')">Galeri</a>
       <a href="#" class="block nav-link" onclick="showSection('datasiswa')">Data Siswa</a>
+      <a href="#" class="block nav-link" onclick="showSection('dataalumni')">
+  Data Alumni
+</a>
     </div>
   </nav>
 
@@ -337,9 +369,9 @@ MEWUJUDKAN PESERTA DIDIK YANG BERBUDI PEKERTI LUHUR, BERPRESTASI, BERWAWASAN LIN
     </section>
 
     <!-- AKADEMIK -->
-<section id="akademik" class="section hidden" style="padding:3rem 1rem;background:#fff;">
+<section id="kurikulum" class="section hidden" style="padding:3rem 1rem;background:#fff;">
   <div style="max-width:1100px;margin:0 auto;">
-    <h2 style="font-size:1.75rem;margin-bottom:1rem;text-align:center;">AKADEMIK</h2>
+    <h2 style="font-size:1.75rem;margin-bottom:1rem;text-align:center;">KURIKULUM</h2>
 
     <p style="text-align:center;color:#374151;margin-bottom:2rem;">
       SMP Negeri 1 Cangkringan melaksanakan pembelajaran dengan menerapkan Kurikulum Merdeka,
@@ -360,59 +392,47 @@ MEWUJUDKAN PESERTA DIDIK YANG BERBUDI PEKERTI LUHUR, BERPRESTASI, BERWAWASAN LIN
         <p style="color:#374151;">Pendampingan intensif bagi siswa berprestasi dalam ajang OPSI,.</p>
       </div>
     </div>
-     <!-- Jam Akademik Sekolah -->
-<div style="margin-top:3rem;">
-  <h3 style="font-size:1.6rem;font-weight:700;color:#fb923c;
-             margin-bottom:2rem;text-align:center;">
-    ⏰ Jam Kegiatan Sekolah
-  </h3>
+    </section>
+    <section id="jadwal" class="section hidden" style="padding:3rem 1rem;background:#f9fafb;">
+  <div style="max-width:1100px;margin:0 auto;">
 
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-              gap:2rem;max-width:800px;margin:0 auto;">
+    <h2 style="font-size:1.75rem;font-weight:700;color:#fb923c;text-align:center;margin-bottom:1.5rem;">
+      🗓️ Jadwal Pelajaran
+    </h2>
 
-    <!-- Senin - Kamis -->
-    <div style="background:#fff;padding:2rem;border-radius:1rem;
-                box-shadow:0 4px 10px rgba(0,0,0,0.1);
-                text-align:center;">
-      <h4 style="font-size:1.3rem;font-weight:700;margin-bottom:.5rem;">
-        📅 Senin – Kamis
-      </h4>
-      <p style="font-size:1.1rem;">
-        <strong>Jam Masuk:</strong> 07.00 WIB
-      </p>
-      <p style="font-size:1.1rem;">
-        <strong>Jam Pulang:</strong> 14.15 WIB
-      </p>
+    <p style="text-align:center;margin-bottom:1.5rem;">
+      Jadwal pelajaran SMP Negeri 1 Cangkringan
+    </p>
+
+    <div style="width:100%;height:600px;border-radius:12px;
+                overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,0.1);">
+      <iframe
+        src="jadwal.pdf"
+        width="100%"
+        height="100%"
+        style="border:none;"
+        title="Jadwal Pelajaran">
+      </iframe>
     </div>
+ </div>
+    </section>
 
-    <!-- Jumat -->
-    <div style="background:#fff;padding:2rem;border-radius:1rem;
-                box-shadow:0 4px 10px rgba(0,0,0,0.1);
-                text-align:center;">
-      <h4 style="font-size:1.3rem;font-weight:700;margin-bottom:.5rem;">
-        📅 Jumat
-      </h4>
-      <p style="font-size:1.1rem;">
-        <strong>Jam Masuk:</strong> 07.00 WIB
-      </p>
-      <p style="font-size:1.1rem;">
-        <strong>Jam Pulang:</strong> 13.20 WIB
-      </p>
-    </div>
-
-
-    <!-- Submenu Fasilitas Sekolah -->
-    <div style="margin-top:3rem;">
-      <h3 style="font-size:1.5rem;font-weight:700;text-align:center;margin-bottom:1rem;color:#fb923c;">Fasilitas Sekolah</h3>
-
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;">
-        <div style="background:#fff7ed;padding:1rem;border-radius:.75rem;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-          <img src="tik.jpeg" alt="Lab Komputer" style="width:100%;border-radius:.5rem;margin-bottom:.5rem;">
-          <h4 style="font-weight:600;color:#92400e;">Laboratorium Komputer</h4>
-          <p style="font-size:.9rem;color:#374151;">Dilengkapi komputer dan jaringan internet untuk mendukung pembelajaran informatika dan literasi digital.</p>
-        </div>
-
-        <div style="background:#fff7ed;padding:1rem;border-radius:.75rem;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+     <!-- Submenu Fasilitas Sekolah -->
+  <section id="fasilitas" class="section hidden" style="padding:3rem 1rem;background:#f9fafb;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <h3 style="font-size:1.5rem;font-weight:700;text-align:center;margin-bottom:1rem;color:#fb923c;">
+      Fasilitas Sekolah
+    </h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;">
+      <div style="background:#fff7ed;padding:1rem;border-radius:.75rem;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+        <img src="tik.jpeg" alt="Lab Komputer" style="width:100%;border-radius:.5rem;margin-bottom:.5rem;">
+        <h4 style="font-weight:600;color:#92400e;">Laboratorium Komputer</h4>
+        <p style="font-size:.9rem;color:#374151;">Dilengkapi komputer dan jaringan internet untuk mendukung pembelajaran informatika dan literasi digital.</p>
+      </div>
+      </div>
+  </div>
+</section>
+<div style="background:#fff7ed;padding:1rem;border-radius:.75rem;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
           <img src="perpus.jpeg" alt="Perpustakaan" style="width:100%;border-radius:.5rem;margin-bottom:.5rem;">
           <h4 style="font-weight:600;color:#92400e;">Perpustakaan Sekolah</h4>
           <p style="font-size:.9rem;color:#374151;">Menyediakan koleksi buku pelajaran, fiksi, dan referensi digital untuk mendukung kegiatan literasi siswa.</p>
@@ -834,6 +854,75 @@ MEWUJUDKAN PESERTA DIDIK YANG BERBUDI PEKERTI LUHUR, BERPRESTASI, BERWAWASAN LIN
     </div>
   </div>
   </section>
+   <section id="dataalumni" class="section hidden" style="padding:3rem 1rem;background:#f9fafb;">
+  <div style="max-width:1100px;margin:0 auto;">
+
+    <h2 style="font-size:1.75rem;font-weight:700;color:#fb923c;text-align:center;margin-bottom:1.5rem;">
+      🎓 Data Alumni
+    </h2>
+
+    <p style="text-align:center;color:#374151;margin-bottom:2rem;">
+      Data alumni SMP Negeri 1 Cangkringan berdasarkan tahun kelulusan dan sekolah lanjutan.
+    </p>
+
+    <div style="overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;background:#fff;
+                    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+                    border-radius:12px;overflow:hidden;">
+
+        <thead style="background:#fb923c;color:white;">
+          <tr>
+            <th style="padding:12px;border:1px solid #fde68a;">No</th>
+            <th style="padding:12px;border:1px solid #fde68a;">Nama Alumni</th>
+            <th style="padding:12px;border:1px solid #fde68a;">Tahun Lulus</th>
+            <th style="padding:12px;border:1px solid #fde68a;">Melanjutkan ke</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr style="text-align:center;">
+            <td style="padding:10px;border:1px solid #e5e7eb;">1</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">ACNIA OCTA SUCI RAMADHANI</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">2025</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">SMA Negeri 1 Pakem</td>
+          </tr>
+          <tr style="text-align:center;background:#f9fafb;">
+            <td style="padding:10px;border:1px solid #e5e7eb;">2</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">ALIZA FITRIANI</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">2025</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">SMK Negeri 1 Kalasan</td>
+          </tr>
+          <tr style="text-align:center;">
+            <td style="padding:10px;border:1px solid #e5e7eb;">3</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">ARINDA FEBRIYANI</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">2025</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">SMK Negeri 1 Cangkringan</td>
+          </tr>
+          <tr style="text-align:center;background:#f9fafb;">
+            <td style="padding:10px;border:1px solid #e5e7eb;">4</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">BELLA ANINDYA CHANA FRADELLA</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">2025</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">SMK N  KEHUTANAN KADIPATEN</td>
+          </tr>
+           <tr style="text-align:center;background:#f9fafb;">
+            <td style="padding:10px;border:1px solid #e5e7eb;">5</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">MUHAMMAD TEGAR RIFALDI</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">2025</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">SMK Negeri 3 Yogyakarta</td>
+          </tr>
+          <tr style="text-align:center;background:#f9fafb;">
+            <td style="padding:10px;border:1px solid #e5e7eb;">6</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">GABRIEL KRISNA BAGUS OKA</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">2025</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">SMKI Yogyakarta</td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+</section>
 
 
 
