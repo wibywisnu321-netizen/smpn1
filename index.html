@@ -19,7 +19,48 @@
       .mobile-only { display: block; }
     }
     #pdfViewer iframe { border: 1px solid #e5e7eb; border-radius: 8px; }
-  </style>
+    /* Style khusus halaman Tata Tertib */
+#tatatertib {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #2c3e50;
+}
+
+/* Judul Tata Tertib */
+#tatatertib h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a5276;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* Subjudul */
+#tatatertib h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #21618c;
+    margin-top: 20px;
+}
+
+/* Daftar tata tertib */
+#tatatertib ul {
+    background: #f4f6f7;
+    padding: 20px 30px;
+    border-radius: 10px;
+}
+
+/* Item tata tertib */
+#tatatertib ul li {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Penekanan poin penting */
+#tatatertib strong {
+    color: #c0392b;
+}
+</style>
 </head>
 <body class="font-sans">
 
@@ -39,7 +80,7 @@
         <div class="hidden md:block">
           <a href="#" class="nav-link" onclick="showSection('home')">Beranda🏠</a>
           <a href="#" class="nav-link" onclick="showSection('profil')">Profil👤</a>
-         <div class="relative inline-block group">
+          <div class="relative inline-block group">
   <a href="#" class="nav-link">Akademik📘</a>
 
   <div class="absolute left-0 top-full hidden group-hover:block
@@ -52,7 +93,8 @@
     </a>
   </div>
 </div>
-    <div class="relative inline-block group">
+
+          <div class="relative inline-block group">
   <a href="#" class="nav-link" onclick="showSection('guru')">Guru👥</a>
   
   <div class="absolute left-0 top-full h-2 w-full"></div>
@@ -90,6 +132,7 @@
   Data Alumni🎓
 </a>
 
+
 </div>
            <a href="video.html" class="menu-btn px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:bg-gray-100">
     🎥 Video
@@ -119,6 +162,7 @@
       <a href="#" class="block nav-link" onclick="showSection('dataalumni')">
   Data Alumni
 </a>
+
     </div>
   </nav>
 
@@ -163,14 +207,14 @@
 Kegiatan ini menjadi ruang srawung antarwarga sekolah—guru, siswa, orang tua, dan masyarakat—untuk bersama-sama merawat budaya, menumbuhkan kreativitas, serta menguatkan identitas kejogjaan. Dengan semangat Hamemayu Hayuning Bawana, Gebyar Kokurikuler diharapkan mampu menjadi wahana bagi siswa untuk berkarya, berkolaborasi, dan berkembang sebagai generasi muda Jogja yang berbudaya, berkarakter, dan siap menghadapi masa depan</p>
         </div>
         <div class="slide" style="position:absolute;opacity:0;transition:opacity .8s;">
-           <img src="sn1.jpeg" alt="UPACARA">
-          <h4 style="font-weight:600;">Upacara Bendera Pertama Diawal Semester Genap</h4>
-          <p style="font-size:.9rem;">Sesuai dengan intruksi dari KEMENDIKDASMEN untuk mengawali hari pertama di semester ini dengan bersama-sama melaksanakan upacara bendera</p>
+           <img src="pelantikan.jpg" alt="PENERAPAN PKJ">
+          <h4 style="font-weight:600;">Pelantikan pengurus osis</h4>
+          <p style="font-size:.9rem;">Pelantikan Pengurus OSIS Periode 2025/2026 merupakan momentum penting dalam kehidupan organisasi kesiswaan. Melalui kegiatan ini, para siswa terpilih secara resmi menerima amanah untuk memimpin, mengembangkan kreativitas, serta menjadi teladan bagi seluruh peserta didik. Pengurus OSIS yang baru diharapkan mampu meneruskan program sebelumnya, membawa inovasi, serta membangun lingkungan sekolah yang harmonis, disiplin, dan berkarakter.</p>
         </div>
         <div class="slide" style="position:absolute;opacity:0;transition:opacity .8s;">
-           <img src="sn.jpeg" alt="SENAM">
-          <h4 style="font-weight:600;">Senam di Senin Pagi</h4>
-          <p style="font-size:.9rem;">Senam di Hari senin pagi ini dilaksanakan setelah upcara bendera ini untuk mengawali hari baru di semster baru ini untuk menjaga kebugaran seluruh warga sekolah</p>
+           <img src="HTN.jpeg" alt="Lomba Sains">
+          <h4 style="font-weight:600;">Jumat Adiwiyata</h4>
+          <p style="font-size:.9rem;">Kegiatan bersih-bersih lingkungan sekolah dilaksanakan sebagai bentuk nyata komitmen sekolah dalam mendukung Program Adiwiyata. Seluruh siswa, guru, dan tenaga kependidikan bergotong royong membersihkan kelas, halaman, taman, dan saluran air guna mewujudkan lingkungan sekolah yang bersih, hijau, dan berkelanjutan.</p>
         </div>
       </div>
     </div>
@@ -371,7 +415,7 @@ MEWUJUDKAN PESERTA DIDIK YANG BERBUDI PEKERTI LUHUR, BERPRESTASI, BERWAWASAN LIN
     <!-- AKADEMIK -->
 <section id="kurikulum" class="section hidden" style="padding:3rem 1rem;background:#fff;">
   <div style="max-width:1100px;margin:0 auto;">
-    <h2 style="font-size:1.75rem;margin-bottom:1rem;text-align:center;">KURIKULUM</h2>
+    <h2 style="font-size:1.75rem;margin-bottom:1rem;text-align:center;">Kurikulum</h2>
 
     <p style="text-align:center;color:#374151;margin-bottom:2rem;">
       SMP Negeri 1 Cangkringan melaksanakan pembelajaran dengan menerapkan Kurikulum Merdeka,
@@ -392,7 +436,8 @@ MEWUJUDKAN PESERTA DIDIK YANG BERBUDI PEKERTI LUHUR, BERPRESTASI, BERWAWASAN LIN
         <p style="color:#374151;">Pendampingan intensif bagi siswa berprestasi dalam ajang OPSI,.</p>
       </div>
     </div>
-    </section>
+    </div>
+</section>
     <section id="jadwal" class="section hidden" style="padding:3rem 1rem;background:#f9fafb;">
   <div style="max-width:1100px;margin:0 auto;">
 
@@ -414,50 +459,54 @@ MEWUJUDKAN PESERTA DIDIK YANG BERBUDI PEKERTI LUHUR, BERPRESTASI, BERWAWASAN LIN
         title="Jadwal Pelajaran">
       </iframe>
     </div>
- </div>
-    </section>
+
+  </div>
+</section>
 <!-- Submenu Fasilitas Sekolah -->
-  <section id="fasilitas" class="section hidden" style="padding:3rem 1rem;background:#f9fafb;">
+   <section id="fasilitas" class="section hidden" style="padding:3rem 1rem;background:#f9fafb;">
   <div style="max-width:1100px;margin:0 auto;">
     <h3 style="font-size:1.5rem;font-weight:700;text-align:center;margin-bottom:1rem;color:#fb923c;">
-      FASILITAS SEKOLAH
+      Fasilitas Sekolah
     </h3>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;">
       <div style="background:#fff7ed;padding:1rem;border-radius:.75rem;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-        <img src="tik.jpeg" alt="Lab Komputer"  style="width:50%;border-radius:.5rem;margin-bottom:.5rem;">
+        <img src="tik.jpeg" alt="Lab Komputer" style="width:100%;border-radius:.5rem;margin-bottom:.5rem;">
         <h4 style="font-weight:600;color:#92400e;">Laboratorium Komputer</h4>
         <p style="font-size:.9rem;color:#374151;">Dilengkapi komputer dan jaringan internet untuk mendukung pembelajaran informatika dan literasi digital.</p>
       </div>
       </div>
   </div>
-<div style="background:#fff7ed;padding:1rem;border-radius:.75rem;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-          <img src="perpus.jpeg" alt="Perpustakaan" style="width:50%;border-radius:.5rem;margin-bottom:.5rem;">
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;">
+        <div style="background:#fff7ed;padding:1rem;border-radius:.75rem;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+          <img src="tik.jpeg" alt="Lab Komputer" style="width:100%;border-radius:.5rem;margin-bottom:.5rem;">
+          <h4 style="font-weight:600;color:#92400e;">Laboratorium Komputer</h4>
+          <p style="font-size:.9rem;color:#374151;">Dilengkapi komputer dan jaringan internet untuk mendukung pembelajaran informatika dan literasi digital.</p>
+        </div>
+
+        <div style="background:#fff7ed;padding:1rem;border-radius:.75rem;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+          <img src="perpus.jpeg" alt="Perpustakaan" style="width:100%;border-radius:.5rem;margin-bottom:.5rem;">
           <h4 style="font-weight:600;color:#92400e;">Perpustakaan Sekolah</h4>
           <p style="font-size:.9rem;color:#374151;">Menyediakan koleksi buku pelajaran, fiksi, dan referensi digital untuk mendukung kegiatan literasi siswa.</p>
         </div>
 
         <div style="background:#fff7ed;padding:1rem;border-radius:.75rem;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-          <img src="basket.png" alt="Lapangan Olahraga" style="width:50%;border-radius:.5rem;margin-bottom:.5rem;">
+          <img src="basket.png" alt="Lapangan Olahraga" style="width:100%;border-radius:.5rem;margin-bottom:.5rem;">
           <h4 style="font-weight:600;color:#92400e;">Lapangan Olahraga</h4>
           <p style="font-size:.9rem;color:#374151;">Area luas untuk kegiatan olahraga, senam, dan event sekolah, mendukung siswa hidup sehat dan aktif.</p>
         </div>
 
         <div style="background:#fff7ed;padding:1rem;border-radius:.75rem;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-          <img src="lipa.png" alt="Laboratorium IPA" style="width:50%;border-radius:.5rem;margin-bottom:.5rem;">
+          <img src="lipa.png" alt="Laboratorium IPA" style="width:100%;border-radius:.5rem;margin-bottom:.5rem;">
           <h4 style="font-weight:600;color:#92400e;">Laboratorium IPA</h4>
           <p style="font-size:.9rem;color:#374151;">Tempat praktik eksperimen dan pembelajaran sains untuk menumbuhkan rasa ingin tahu dan berpikir ilmiah.</p>
-        </div>
-      </div>
-      <div style="background:#fff7ed;padding:1rem;border-radius:.75rem;box-shadow:0 1px 3px rgba(0,0,0,0.1);">
-          <img src="ssk.png" alt="Laboratorium IPA" style="width:50%;border-radius:.5rem;margin-bottom:.5rem;">
-          <h4 style="font-weight:600;color:#92400e;">Ruang SSK</h4>
-          <p style="font-size:.9rem;color:#374151;">Ruang rapat SSK Yang di lengkapi dengan IFP yang bisa di gunakan untuk pembelajaran murid</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+    </section>
 
     <!-- GURU -->
 <section id="guru" class="section hidden" style="padding:3rem 1rem;background:#fff;">
@@ -804,22 +853,11 @@ MEWUJUDKAN PESERTA DIDIK YANG BERBUDI PEKERTI LUHUR, BERPRESTASI, BERWAWASAN LIN
           <p style="font-size:.85rem;color:#374151;">kegiatan jumat bersih di SMP Negeri 1 cangkringan di adakan setiap jumat minggu pertama untuk menjaga kebersihan lingkungan sekolah.</p>
         </div>
       </div>
- <!-- Foto 8 -->
-      <div style="background:#fff7ed;border-radius:.75rem;overflow:hidden;box-shadow:0 4px 6px rgba(0,0,0,0.1);transition:.3s;">
-        <img src="sn.jpeg" alt="Projek P5" style="width:100%;height:200px;object-fit:cover;">
+ <div style="background:#fff7ed;border-radius:.75rem;overflow:hidden;box-shadow:0 4px 6px rgba(0,0,0,0.1);transition:.3s;">
+        <img src="HTN.jpeg" alt="Projek P5" style="width:100%;height:200px;object-fit:cover;">
         <div style="padding:.75rem;">
-          <h4 style="font-weight:600;color:#fb923c;">Senam senin pagi</h4>
-          <p style="font-size:.85rem;color:#374151;">Senam pagi ceria menyambut hari pertama masuk sekolah</p>
-        </div>
-      </div>
-      <!-- Foto  -->
-      <div style="background:#fff7ed;border-radius:.75rem;overflow:hidden;box-shadow:0 4px 6px rgba(0,0,0,0.1);transition:.3s;">
-        <img src="sn1.jpeg" alt="Projek P5" style="width:100%;height:200px;object-fit:cover;">
-        <div style="padding:.75rem;">
-          <h4 style="font-weight:600;color:#fb923c;">Upacara senin pagi</h4>
-          <p style="font-size:.85rem;color:#374151;">Upacara senin pagi di awal masuk semester genap tahun ajaran 2025/2026 selaku pembina upacar Kepala sekolah Smp Negeri 1 Cangkringan Ibu Sri Wahyuni,S.Pd.M.Pd</p>
-        </div>
-      </div>
+          <h4 style="font-weight:600;color:#fb923c;">Jumat Adiwiyata</h4>
+          <p style="font-size:.85rem;color:#374151;">“Bersih Sekolahku, Sehat Lingkunganku, Wujud Nyata Sekolah Adiwiyata.”</p>
     </div>
   </div>
 </section>
@@ -861,41 +899,18 @@ MEWUJUDKAN PESERTA DIDIK YANG BERBUDI PEKERTI LUHUR, BERPRESTASI, BERWAWASAN LIN
                 box-shadow:0 4px 10px rgba(0,0,0,0.1);">
 
       <ol style="line-height:1.8;color:#374151;">
-        <li>1. Pakaian Seragam Sekolah</li>
-
-Senin: Seragam putih-putih, berjas, bertopi, dan berdasi (untuk upacara).
-Selasa & Kamis: Seragam putih-biru.
-Rabu: Seragam Pramuka.
-Jumat: Seragam Batik dengan celana/rok putih.
-Ketentuan Umum: Baju harus dimasukkan, menggunakan ikat pinggang hitam sekolah, kaos kaki putih di atas mata kaki, dan sepatu hitam (kecuali hari Jumat boleh sepatu bebas).
-<li>2.Rambut, Kuku, dan Penampilan</li>
-Siswa dilarang memanjangkan kuku, bertato, atau mengecat rambut dan kuku.
-Siswa Laki-laki: Rambut harus rapi dan pendek (ukuran 2:1), tidak boleh gundul, dan dilarang memakai perhiasan (kalung, cincin, anting).
-Siswa Perempuan: Tidak memakai riasan atau perhiasan secara berlebihan.
-
-<li>3. Jam Masuk dan Kepulangan</li>
-Siswa wajib hadir 10 menit sebelum bel masuk berbunyi (20 menit bagi petugas piket).
-Kegiatan dimulai dengan literasi, tadarus (bagi Muslim), dan menyanyikan lagu Indonesia Raya.
-Saat pulang, siswa dilarang "nongkrong" di tepi jalan atau gerbang dan harus langsung pulang ke rumah.
- <li>4. Larangan Utama</li>
-Dilarang membawa atau menggunakan rokok, minuman keras, narkoba, dan obat terlarang lainnya.
-Dilarang berkelahi, melakukan perundungan ( bullying ), atau kekerasan seksual.
-Dilarang membawa senjata tajam atau alat yang membahayakan.
-Dilarang membawakan konten pornografi atau bermain judi.
-Penggunaan HP: Harus dimasukkan ke dalam loker di ruang TU jika tidak digunakan untuk pembelajaran.
-
-<li> 5. Peraturan Akademik & Kenaikan Kelas</li>
-Kehadiran: Minimal 90% dari total hari belajar efektif dalam satu semester.
-Kriteria Kelas Kenaikan : Menyelesaikan seluruh program pembelajaran, berkelakuan minimal “Baik”, dan memenuhi syarat kehadiran.
-Penilaian: Meliputi asesmen formatif (proses) dan sumatif (akhir materi/semester/tahun).
-<li>Pelanggaran akan dikenakan sanksi berupa teguran lisan, tindakan logistik (seperti membersihkan lingkungan sekolah/mushola), teguran tertulis, hingga dikembalikan kepada orang tua.
-Sekolah berhak menyediakan barang milik siswa (seperti HP atau sepatu yang tidak sesuai) sebagai bentuk pelatihan.</li>
-  </ol>
+        <li>Peserta didik hadir di sekolah paling lambat 10 menit sebelum pelajaran dimulai.</li>
+        <li>Mengenakan seragam sekolah sesuai ketentuan hari.</li>
+        <li>Menjaga sikap sopan, santun, dan menghormati guru serta warga sekolah.</li>
+        <li>Dilarang membawa barang terlarang (rokok, senjata tajam, dll).</li>
+        <li>Menjaga kebersihan, ketertiban, dan fasilitas sekolah.</li>
+        <li>Mengikuti kegiatan pembelajaran dengan tertib dan disiplin.</li>
+      </ol>
 
     </div>
   </div>
-  </section>
-   <section id="dataalumni" class="section hidden" style="padding:3rem 1rem;background:#f9fafb;">
+</section>
+  <section id="dataalumni" class="section hidden" style="padding:3rem 1rem;background:#f9fafb;">
   <div style="max-width:1100px;margin:0 auto;">
 
     <h2 style="font-size:1.75rem;font-weight:700;color:#fb923c;text-align:center;margin-bottom:1.5rem;">
@@ -923,69 +938,27 @@ Sekolah berhak menyediakan barang milik siswa (seperti HP atau sepatu yang tidak
         <tbody>
           <tr style="text-align:center;">
             <td style="padding:10px;border:1px solid #e5e7eb;">1</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">ACNIA OCTA SUCI RAMADHANI</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">2025</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">SMA Negeri 1 Pakem</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">Andi Prasetyo</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">2023</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">SMA Negeri 1 Sleman</td>
           </tr>
           <tr style="text-align:center;background:#f9fafb;">
             <td style="padding:10px;border:1px solid #e5e7eb;">2</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">ALIZA FITRIANI</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">2025</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">SMK Negeri 1 Kalasan</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">Siti Aisyah</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">2023</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">SMK Negeri 2 Depok</td>
           </tr>
           <tr style="text-align:center;">
             <td style="padding:10px;border:1px solid #e5e7eb;">3</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">ARINDA FEBRIYANI</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">2025</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">SMK Negeri 1 Cangkringan</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">Rizki Maulana</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">2024</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">SMA Negeri 1 Pakem</td>
           </tr>
           <tr style="text-align:center;background:#f9fafb;">
             <td style="padding:10px;border:1px solid #e5e7eb;">4</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">BELLA ANINDYA CHANA FRADELLA</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">2025</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">SMK N  KEHUTANAN KADIPATEN</td>
-          </tr>
-           <tr style="text-align:center;background:#f9fafb;">
-            <td style="padding:10px;border:1px solid #e5e7eb;">5</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">MUHAMMAD TEGAR RIFALDI</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">2025</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">SMK Negeri 3 Yogyakarta</td>
-          </tr>
-          <tr style="text-align:center;background:#f9fafb;">
-            <td style="padding:10px;border:1px solid #e5e7eb;">6</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">GABRIEL KRISNA BAGUS OKA</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">2025</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">SMKI Yogyakarta</td>
-          </tr>
-          <tr style="text-align:center;background:#f9fafb;">
-            <td style="padding:10px;border:1px solid #e5e7eb;">7</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">BAKIL TSAKIB ARROZI</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">2025</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">Insan Mulia Boarding School</td>
-          </tr>
-          <tr style="text-align:center;background:#f9fafb;">
-            <td style="padding:10px;border:1px solid #e5e7eb;">8</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">FAHDLI WAHYU NUGROHO</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">2025</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">SMA Negeri 1 Ngemplak</td>
-          </tr>
-          <tr style="text-align:center;background:#f9fafb;">
-            <td style="padding:10px;border:1px solid #e5e7eb;">9</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">UJUNG CITRANINGTIYAS NUGRAHENI</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">2025</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">SMAN 1 TUNTANG SEMARANG</td>
-          </tr>
-           <tr style="text-align:center;background:#f9fafb;">
-            <td style="padding:10px;border:1px solid #e5e7eb;">10</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">CHANDRA WIJAYA KUSUMA</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">2025</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">SMK 1 Piri Jogja</td>
-          </tr>
-           <tr style="text-align:center;background:#f9fafb;">
-            <td style="padding:10px;border:1px solid #e5e7eb;">11</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">TRISTAN FAISAL NUR RAMADHAN</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">2025</td>
-            <td style="padding:10px;border:1px solid #e5e7eb;">SMK PUTRA SAMUDERA YOGYAKARTA</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">Dewi Lestari</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">2024</td>
+            <td style="padding:10px;border:1px solid #e5e7eb;">SMK Negeri 1 Kalasan</td>
           </tr>
         </tbody>
 
@@ -995,9 +968,7 @@ Sekolah berhak menyediakan barang milik siswa (seperti HP atau sepatu yang tidak
   </div>
 </section>
 
-
-
-  </main>
+</main>
 
   <footer style="background:#1f2937;color:#fff;padding:2.5rem 1rem;margin-top:2rem;">
   <div style="max-width:1100px;margin:0 auto;text-align:center;">
