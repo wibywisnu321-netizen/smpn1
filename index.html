@@ -91,6 +91,10 @@
     <a href="#" onclick="showSection('jadwal')" class="block px-4 py-2 hover:bg-orange-100">
       🗓️ Jadwal Pelajaran
     </a>
+    <a href="#" onclick="showSection('Soalliterasi')" class="block px-4 py-2 hover:bg-orange-100">
+  📝 Soal literasi
+</a>
+
   </div>
 </div>
 
@@ -156,6 +160,7 @@
       <a href="#" class="block nav-link" onclick="showSection('akademik')">Akademik</a>
       <a href="#" class="block nav-link ml-4" onclick="showSection('kurikulum')"> Kurikulum</a>
       <a href="#" class="block nav-link ml-4" onclick="showSection('jadwal')"> Jadwal Pelajaran</a>
+      <a href="#" class="block nav-link ml-4" onclick="showSection('soalliterasi')">  Soal literasi</a>
       <a href="#" class="block nav-link" onclick="showSection('guru')">Guru</a>
       <a href="#" class="block nav-link ml-4" onclick="showSection('fasilitas')"> Fasilitas Sekolah</a>
       <a href="#" class="block nav-link" onclick="showSection('galeri')">Galeri</a>
@@ -463,9 +468,40 @@ MEWUJUDKAN PESERTA DIDIK YANG BERBUDI PEKERTI LUHUR, BERPRESTASI, BERWAWASAN LIN
         title="Jadwal Pelajaran">
       </iframe>
     </div>
+</div>
+</section>
+<section id="Soalliterasi" class="section hidden" style="padding:3rem 1rem;background:#f9fafb;">
+  <div style="max-width:1100px;margin:0 auto;text-align:center;">
+
+    <h2 style="font-size:1.75rem;font-weight:700;color:#fb923c;margin-bottom:1.5rem;">
+      📝 Soal Literasi
+    </h2>
+
+    <p style="margin-bottom:1.5rem;">
+      Pilih kelas untuk membuka latihan soal dalam bentuk PDF
+    </p>
+
+    <!-- Tombol Kelas -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:1rem;">
+      <button onclick="bukaSoal('Literasikelas7.pdf')"
+        style="background:#fb923c;color:#fff;padding:.8rem;border-radius:.75rem;border:none;cursor:pointer;font-weight:600;">
+        📘 Soal Kelas 7
+      </button>
+
+      <button onclick="bukaSoal('Literasikelas8.pdf')"
+        style="background:#fb923c;color:#fff;padding:.8rem;border-radius:.75rem;border:none;cursor:pointer;font-weight:600;">
+        📗 Soal Kelas 8
+      </button>
+    </div>
+
+    <!-- PDF Viewer -->
+    <div id="soalViewer" style="margin-top:1.5rem;display:none;">
+      <iframe id="soalFrame" src="" width="100%" height="650"></iframe>
+    </div>
 
   </div>
 </section>
+
 <!-- Submenu Fasilitas Sekolah -->
    <section id="fasilitas" class="section hidden" style="padding:3rem 1rem;background:#f9fafb;">
   <div style="max-width:1100px;margin:0 auto;">
@@ -1088,6 +1124,14 @@ MEWUJUDKAN PESERTA DIDIK YANG BERBUDI PEKERTI LUHUR, BERPRESTASI, BERWAWASAN LIN
       viewer.style.display = 'block';
       window.scrollTo(0, viewer.offsetTop - 20);
     }
+    function bukaSoal(file) {
+  const viewer = document.getElementById('soalViewer');
+  const frame = document.getElementById('soalFrame');
+
+  frame.src = file;
+  viewer.style.display = 'block';
+}
+
     // show home by default
     document.addEventListener('DOMContentLoaded', function(){ showSection('home'); });
   </script>
