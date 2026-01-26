@@ -60,6 +60,48 @@
 #tatatertib strong {
     color: #c0392b;
 }
+/* Animasi tombol mobile */
+.mobile-link {
+  display: block;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: #fff7ed;
+  color: #fb923c;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.mobile-link:hover {
+  background: #fb923c;
+  color: white;
+  transform: translateX(5px);
+  box-shadow: 0 4px 10px rgba(251,146,60,0.4);
+}
+
+/* Dropdown mobile */
+.mobile-dropdown {
+  display: none;
+  margin-left: 1rem;
+}
+
+.mobile-dropdown.show {
+  display: block;
+  animation: slideDown 0.3s ease;
+}
+
+/* Animasi buka dropdown */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 </style>
 </head>
 <body class="font-sans">
@@ -154,22 +196,44 @@
       </marquee>
     </div>
 
-    <div class="mobile-menu hidden bg-white px-4 py-3">
-      <a href="#" class="block nav-link" onclick="showSection('home')">Beranda</a>
-      <a href="#" class="block nav-link" onclick="showSection('profil')">Profil</a>
-      <a href="#" class="block nav-link" onclick="showSection('akademik')">Akademik</a>
-      <a href="#" class="block nav-link ml-4" onclick="showSection('kurikulum')"> Kurikulum</a>
-      <a href="#" class="block nav-link ml-4" onclick="showSection('jadwal')"> Jadwal Pelajaran</a>
-      <a href="#" class="block nav-link ml-4" onclick="showSection('Soalliterasi')">Soal literasi</a>
-      <a href="#" class="block nav-link" onclick="showSection('guru')">Guru</a>
-      <a href="#" class="block nav-link ml-4" onclick="showSection('fasilitas')"> Fasilitas Sekolah</a>
-      <a href="#" class="block nav-link" onclick="showSection('galeri')">Galeri</a>
-      <a href="#" class="block nav-link" onclick="showSection('datasiswa')">Data Siswa</a>
-      <a href="#" class="block nav-link ml-4" onclick="showSection('datasiswa')"> Data Siswa</a>
-      <a href="#" class="block nav-link ml-4" onclick="showSection('tatatertib')">Tata Tertib</a>
-      <a href="#" class="block nav-link" onclick="showSection('dataalumni')">Data Alumni</a>
-      <a href="#" class="block nav-link" onclick="showSection('video')">video</a>
+    <div class="mobile-menu hidden bg-white px-4 py-4 rounded-b-xl shadow-lg">
+
+  <a href="#" class="mobile-link" onclick="showSection('home')">🏠 Beranda</a>
+  <a href="#" class="mobile-link" onclick="showSection('profil')">👤 Profil</a>
+
+  <!-- Akademik Dropdown -->
+  <button class="mobile-link w-full text-left" onclick="toggleDropdown('akademikMobile')">
+    📘 Akademik ▾
+  </button>
+  <div id="akademikMobile" class="mobile-dropdown">
+    <a href="#" class="mobile-link" onclick="showSection('kurikulum')">📚 Kurikulum</a>
+    <a href="#" class="mobile-link" onclick="showSection('jadwal')">🗓️ Jadwal Pelajaran</a>
+    <a href="#" class="mobile-link" onclick="showSection('Soalliterasi')">📝 Soal Literasi</a>
   </div>
+
+  <!-- Guru Dropdown -->
+  <button class="mobile-link w-full text-left" onclick="toggleDropdown('guruMobile')">
+    👥 Guru & Fasilitas ▾
+  </button>
+  <div id="guruMobile" class="mobile-dropdown">
+    <a href="#" class="mobile-link" onclick="showSection('guru')">👨‍🏫 Daftar Guru</a>
+    <a href="#" class="mobile-link" onclick="showSection('fasilitas')">🏫 Fasilitas Sekolah</a>
+  </div>
+
+  <!-- Data Dropdown -->
+  <button class="mobile-link w-full text-left" onclick="toggleDropdown('dataMobile')">
+    📊 Data Sekolah ▾
+  </button>
+  <div id="dataMobile" class="mobile-dropdown">
+    <a href="#" class="mobile-link" onclick="showSection('datasiswa')">📋 Data Siswa</a>
+    <a href="#" class="mobile-link" onclick="showSection('tatatertib')">📜 Tata Tertib</a>
+    <a href="#" class="mobile-link" onclick="showSection('dataalumni')">🎓 Data Alumni</a>
+  </div>
+
+  <a href="video.html" class="mobile-link">🎥 Video</a>
+
+</div>
+
   </nav>
 
   <main style="padding-top:120px;">
@@ -1204,5 +1268,12 @@ Di bawah naungan semangat "Vidyagiri Pratista" , rombongan yang terdiri dari sis
     // show home by default
     document.addEventListener('DOMContentLoaded', function(){ showSection('home'); });
   </script>
+  <script>
+function toggleDropdown(id) {
+  const el = document.getElementById(id);
+  el.classList.toggle("show");
+}
+</script>
+
 </body>
 </html>
