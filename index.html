@@ -101,6 +101,22 @@
     transform: translateY(0);
   }
 }
+/* Rapikan paragraf berita terbaru */
+#newsSlider p {
+  text-align: justify;
+  line-height: 1.6;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+/* Judul berita */
+#newsSlider h4 {
+  margin-top: 8px;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: #fb923c;
+}
 
 </style>
 </head>
@@ -155,7 +171,19 @@
     </a>
   </div>
 </div>
-          <a href="#" class="nav-link" onclick="showSection('galeri')">Galeri🖼️</a>
+           <div class="relative inline-block group">
+  <a href="#" class="nav-link">Galeri🖼️</a>
+
+  <div class="absolute left-0 top-full hidden group-hover:block
+              bg-white shadow-lg rounded-md min-w-[220px] z-50">
+    <a href="#" onclick="showSection('galeri')" class="block px-4 py-2 hover:bg-orange-100">
+      🖼️ Foto Galeri
+    </a>
+    <a href="video.html" class="block px-4 py-2 hover:bg-orange-100">
+      🎥 Video
+    </a>
+  </div>
+</div>
           <div class="relative inline-block group">
   <a href="#" class="nav-link">Data Siswa📊</a>
 
@@ -168,20 +196,17 @@
        class="block px-4 py-2 hover:bg-orange-100">
        📋 Data Siswa
     </a>
+    <a href="#" onclick="showSection('dataalumni')"
+   class="block px-4 py-2 hover:bg-orange-100">
+   🎓 Data Alumni
+</a>
     <a href="#" onclick="showSection('tatatertib')"
        class="block px-4 py-2 hover:bg-orange-100">
        📜 Tata Tertib
     </a>
   </div>
 </div>
-<a href="#" class="nav-link" onclick="showSection('dataalumni')">
-  Data Alumni🎓
-</a>
 </div>
-<a href="video.html"
-   class="menu-btn hidden md:block px-4 py-2 rounded-lg font-medium transition-all duration-300 hover:bg-gray-100">
-    🎥 Video
-</a>
 </div>
 <div class="md:hidden">
           <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-menu').classList.toggle('hidden')">
@@ -200,6 +225,7 @@
 
   <a href="#" class="mobile-link" onclick="showSection('home')">🏠 Beranda</a>
   <a href="#" class="mobile-link" onclick="showSection('profil')">👤 Profil</a>
+  <a href="#" class="mobile-link" onclick="showSection('galeri')">🖼️ Galeri</a>
 
   <!-- Akademik Dropdown -->
   <button class="mobile-link w-full text-left" onclick="toggleDropdown('akademikMobile')">
@@ -268,7 +294,7 @@
     <!-- Kanan: Berita Terbaru -->
     <div style="width:380px;z-index:1;background-color:rgba(255,255,255,0.9);color:#333;border-radius:1rem 0 0 1rem;padding:1.5rem;height:calc(100vh - 100px);overflow:hidden;box-shadow:-4px 0 10px rgba(0,0,0,0.2);display:flex;flex-direction:column;">
       <h3 style="font-weight:700;color:#fb923c;text-align:center;margin-bottom:1rem;">📰 Berita Terbaru</h3>
-      <div id="newsSlider" style="position:relative;overflow:hidden;flex:1;">
+      <div id="newsSlider" style="position:relative;overflow:hidden;flex:1;padding:10px;">
         <div class="slide" style="position:absolute;opacity:1;transition:opacity .8s;">
            <img src="labuhan.jpeg" alt="Labuhan">
           <h4 style="font-weight:600;">Labuhan Ageng Merapi</h4>
