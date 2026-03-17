@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SMP Negeri 1 Cangkringan</title>
   <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body { box-sizing: border-box; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
@@ -147,10 +148,46 @@
   background: linear-gradient(90deg, rgba(6,95,70,.95), rgba(5,150,105,.95));
   border-bottom: 2px solid #facc15;
 
-  height: 45px;              /* ← tinggi FIX */
-  display: flex;
+  height: 45px; 
+  display: flex;           
   align-items: center;
   overflow: hidden;
+}
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: jalan 20s linear infinite;
+  font-size: 2.2rem;
+  font-family: 'RamadhanMubarak', serif; 
+  color: #FFD700;
+  text-shadow: 0 0 5px #FFD700,
+               0 0 10px #FFD700,
+               0 0 20px #FFA500;
+
+}
+
+/* animasi jalan */
+@keyframes jalan {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* icon ketupat */
+.ketupat-icon {
+  width: 28px;
+  display: inline-block;
+  margin: 0 10px;
+  vertical-align: middle;
 }
 </style>
 </head>
@@ -249,17 +286,25 @@
         </div>
       </div>
     </div>
-<div class="bg-ramadhan text-white text-center">
-  <marquee scrollamount="6" class="font-ramadhan">
-    <img src="ketupat.png" class="ketupat-icon">
-    ✨ Keluarga Besar SMP Negeri 1 Cangkringan Mengucapkan Selamat Menunaikan Ibadah Puasa Ramadhan 
-    <span class="font-normal">1447 H</span>
-     Marhaban Ya Ramadhan ✨
-    <img src="ketupat.png" class="ketupat-icon">
-  </marquee>
+<div class="bg-ramadhan">
+  <div class="marquee-container">
+    <div class="marquee-text">
+      <img src="ketupat.png" class="ketupat-icon">
+      ✨ Keluarga Besar SMP Negeri 1 Cangkringan Mengucapkan Selamat Menunaikan Ibadah Puasa Ramadhan 
+      <span class="font-normal">1447 H</span>
+      Marhaban Ya Ramadhan ✨
+      <img src="ketupat.png" class="ketupat-icon">
+
+      <!-- DUPLIKAT biar looping halus -->
+      <img src="ketupat.png" class="ketupat-icon">
+      ✨ Keluarga Besar SMP Negeri 1 Cangkringan Mengucapkan Selamat Menunaikan Ibadah Puasa Ramadhan 
+      <span class="font-normal">1447 H</span>
+      Marhaban Ya Ramadhan ✨
+      <img src="ketupat.png" class="ketupat-icon">
+    </div>
+  </div>
 </div>
-</div>
-</div>
+
 
     <div class="mobile-menu hidden bg-white px-4 py-4 rounded-b-xl shadow-lg">
 
@@ -344,14 +389,10 @@
       <h3 style="font-weight:700;color:#fb923c;text-align:center;margin-bottom:1rem;">📰 Berita Terbaru</h3>
       <div id="newsSlider" style="position:relative;overflow:hidden;flex:1;padding:10px;">
         <div class="slide" style="position:absolute;opacity:1;transition:opacity .8s;">
-  <img src="genius.jpeg" alt="Genius" style="width:100%; border-radius:8px; margin-bottom:10px;">
-   <h4 style="font-weight:600;">Game Notasi Ilmiah Untuk Sains</h4>
-   <p style="font-size:.9rem;">untuk layanan game dan pedoman teknis cara penggunaan bisa di akses melalui link ini
-   https://online.fliphtml5.com/zbbng/PEDOMAN-TEKNIS-CARA-PENGGUNAAN-GENIUS/#p=2</p>
-   
-   <a href="https://online.fliphtml5.com/zbbng/PEDOMAN-TEKNIS-CARA-PENGGUNAAN-GENIUS/#p=2" target="_blank">
-Lihat Pedoman Genius</a>
-</div>
+  <img src="tj.jpeg" alt="Genius" style="width:100%; border-radius:8px; margin-bottom:10px;">
+   <h4 style="font-weight:600;">Berbagi Takjil</h4>
+   <p style="font-size:.9rem;"></p>
+   </div>
         <div class="slide" style="position:absolute;opacity:0;transition:opacity .8s;">
            <img src="baksos.jpeg" alt="Labuhan">
           <h4 style="font-weight:600;">Baksos Osis</h4>
@@ -1206,7 +1247,21 @@ Kasongan adalah desa wisata kerajinan gerabah dan pusat produksi keramik yang te
           <p style="font-size:.85rem;color:#374151;"></p>
           <a href="https://online.fliphtml5.com/zbbng/PEDOMAN-TEKNIS-CARA-PENGGUNAAN-GENIUS/#p=2" target="_blank">
 Lihat Pedoman Genius</a>
-        </div>   
+        </div>  
+           </div> 
+        <div style="background:#fff7ed;border-radius:.75rem;overflow:hidden;box-shadow:0 4px 6px rgba(0,0,0,0.1);transition:.3s;">
+       <img src="tj1.jpeg" style="width:100%;height:auto;">
+        <div style="padding:.75rem;">
+          <h4 style="font-weight:600;color:#fb923c;">BERBAGI TAKJIL</h4>
+          <p style="font-size:.85rem;color:#374151;">Judul: Kecil Bagi Kita, Berarti Bagi Mereka ✨
+
+“Ramadhan bukan hanya soal menahan lapar, tapi soal memperluas kesabaran dan berbagi kasih antar sesama. Hari ini, kami dari OSIS SMP NEGERI 1 Cangkringan turun ke jalan untuk sedikit berbagi kebahagiaan melalui paket takjil sederhana.
+
+Melihat senyum para pengendara dan pekerja jalanan saat menerima bungkusan ini adalah 'takjil' yang sesungguhnya bagi hati kami. Terpancar semangat kebersamaan yang mengingatkan bahwa berbagi tak akan pernah membuat kita kekurangan.
+
+Terima kasih untuk seluruh teman-teman dan donatur yang sudah ikut berkontribusi. Semoga sebungkus takjil ini bisa menjadi pembatal puasa yang berkah bagi mereka yang masih dalam perjalanan. Mari terus menebar kebaikan! 🌙✨"</p>
+          </div> 
+          
 </section>
 
     </section>
