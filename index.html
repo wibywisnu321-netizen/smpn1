@@ -157,38 +157,43 @@
   width: 100%;
   overflow: hidden;
   position: relative;
+  background: linear-gradient(90deg, rgba(6,95,70,0.95), rgba(5,150,105,0.95)); /* Warna latar hijau */
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid #facc15;
 }
 
 .marquee-text {
   display: inline-block;
   white-space: nowrap;
-  animation: jalan 20s linear infinite;
-  font-size: 2.2rem;
-  font-family: 'RamadhanMubarak', serif; 
-  color: #FFD700;
-  text-shadow: 0 0 5px #FFD700,
-               0 0 10px #FFD700,
-               0 0 20px #FFA500;
-
+  animation: jalan 40s linear infinite;
+  font-size: 1.6rem; 
+  font-weight: 800; /* Membuat huruf sangat tebal */
+  font-family: 'Arial', sans-serif; /* Font tegas tanpa dekorasi berlebih */
+  color: #FFFFFF; /* Warna putih agar kontras */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Bayangan tegas */
+  letter-spacing: 1px;
 }
 
-/* animasi jalan */
 @keyframes jalan {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
 }
 
-/* icon ketupat */
-.ketupat-icon {
-  width: 28px;
+.marquee-text {
   display: inline-block;
-  margin: 0 10px;
-  vertical-align: middle;
+  white-space: nowrap;
+  animation: jalan 60s linear infinite;
+  font-size: 1.8rem; 
+  font-weight: 800; 
+  font-family: 'Arial', sans-serif; 
+  color: #FFFFFF; 
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+  letter-spacing: 1px;
 }
+
+
 </style>
 </head>
 <body class="font-sans">
@@ -286,27 +291,13 @@
         </div>
       </div>
     </div>
-<div class="bg-ramadhan">
-  <div class="marquee-container">
-    <div class="marquee-text">
-      <img src="ketupat.png" class="ketupat-icon">
-      ✨ Keluarga Besar SMP Negeri 1 Cangkringan Mengucapkan Selamat Hari Raya idul fitri 
-      <span class="font-normal">1447 H</span>
-      Mohon maaf lahir dan batin ✨
-      <img src="ketupat.png" class="ketupat-icon">
-
-      <!-- DUPLIKAT biar looping halus -->
-      <img src="ketupat.png" class="ketupat-icon">
-      ✨ Keluarga Besar SMP Negeri 1 Cangkringan Mengucapkan Selamat Hari raya idul fitri
-      <span class="font-normal">1447 H</span>
-      Mohon maaf lahir batin ✨
-      <img src="ketupat.png" class="ketupat-icon">
-    </div>
+<div class="marquee-container">
+  <div class="marquee-text">
+    ✨ SELAMAT DATANG DI WEB RESMI SMP NEGERI 1 CANGKRINGAN INFORMASI  SPMB 2026/2027 SEGERA DI BUKA ✨ 
+    &nbsp;&nbsp;&nbsp;&nbsp; ✨SELAMAT DATANG DI WEB RESMI SMP NEGERI 1 CANGKRINGAN INFORMASI  SPMB 2026/2027 SEGERA DI BUKA  ✨
   </div>
 </div>
-
-
-    <div class="mobile-menu hidden bg-white px-4 py-4 rounded-b-xl shadow-lg">
+ <div class="mobile-menu hidden bg-white px-4 py-4 rounded-b-xl shadow-lg">
 
   <a href="#" class="mobile-link" onclick="showSection('home')">🏠 Beranda</a>
   <a href="#" class="mobile-link" onclick="showSection('profil')">👤 Profil</a>
