@@ -279,7 +279,27 @@
     <a href="#" onclick="showSection('tatatertib')"
        class="block px-4 py-2 hover:bg-orange-100">
        📜 Tata Tertib
+</a>
+  </div>
+</div>
+<div class="relative inline-block group">
+  <a href="#" class="nav-link">Informasi ℹ️</a>
+
+  <div class="absolute left-0 top-full hidden group-hover:block
+              bg-white shadow-lg rounded-md min-w-[220px] z-50">
+    
+    <a href="#" onclick="showSection('spmb')" 
+       class="block px-4 py-2 hover:bg-orange-100">
+       🏫 Informasi SPMB
     </a>
+
+    <a href="https://erapor.kemdikbud.go.id/" target="_blank"
+       class="block px-4 py-2 hover:bg-orange-100">
+       📊 e-Rapor
+    </a>
+
+  </div>
+</div>
   </div>
 </div>
 </div>
@@ -340,6 +360,19 @@
   </a>
   <a href="video.html" class="mobile-link">
     🎥 Video
+  </a>
+</div>
+<!-- Informasi Dropdown Mobile -->
+<button class="mobile-link w-full text-left" onclick="toggleDropdown('infoMobile')">
+  ℹ️ Informasi ▾
+</button>
+
+<div id="infoMobile" class="mobile-dropdown">
+  <a href="#" class="mobile-link" onclick="showSection('spmb')">
+    🏫 Informasi SPMB
+  </a>
+  <a href="https://erapor.kemdikbud.go.id/" class="mobile-link" target="_blank">
+    📊 e-Rapor
   </a>
 </div>
 </div>
@@ -1420,9 +1453,40 @@ Terima kasih untuk seluruh teman-teman dan donatur yang sudah ikut berkontribusi
 
       </table>
     </div>
-
+    
   </div>
 </section>
+<section id="spmb" class="section hidden" style="padding:3rem 1rem;background:#f9fafb;">
+  <div style="max-width:900px;margin:0 auto;text-align:center;">
+    
+    <h2 style="font-size:1.8rem;font-weight:700;color:#fb923c;margin-bottom:1rem;">
+      🏫 Informasi SPMB
+    </h2>
+
+    <p style="color:#374151;margin-bottom:1.5rem;">
+      Informasi Sistem Penerimaan Murid Baru (SPMB) SMP Negeri 1 Cangkringan Tahun Pelajaran 2026/2027.
+    </p>
+
+    <div style="background:#fff;padding:2rem;border-radius:1rem;
+                box-shadow:0 4px 10px rgba(0,0,0,0.1);text-align:left;">
+      
+      <ul style="line-height:1.8;color:#374151;">
+        <li>📅 Jadwal pendaftaran: (--)</li>
+        <li>📍 Jalur pendaftaran: Zonasi, Afirmasi, Prestasi</li>
+        <li>📄 Persyaratan: KK, Akta Kelahiran, dll</li>
+        <li>🌐 Pendaftaran online melalui website resmi</li>
+      </ul>
+
+      <div style="text-align:center;margin-top:1.5rem;">
+        <a href="#" 
+           style="background:#fb923c;color:#fff;padding:.7rem 1.5rem;
+                  border-radius:.5rem;text-decoration:none;font-weight:600;">
+          🔗 Daftar Sekarang
+  
+        </a>
+      </section>
+  </div>
+
 
 </main>
 
