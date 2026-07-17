@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SMP Negeri 1 Cangkringan - Vidya Giri Prastista</title>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Amiri&family=Reem+Kufi:wght@700&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            arabic: ['Amiri', 'serif'],
+            reem: ['Reem Kufi', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#fff7ed',
+              100: '#ffedd5',
+              500: '#fb923c',
+              600: '#f97316',
+              700: '#c2410c',
+              dark: '#1e293b',
+            },
+            adiwiyata: {
+              500: '#059669',
+              600: '#047857',
+              700: '#065f46',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom CSS transitions & animations */
+    .nav-glass {
+      background: rgba(249, 115, 22, 0.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    }
+    .hero-gradient {
+      background: linear-gradient(180deg, rgba(30, 41, 59, 0.4) 0%, rgba(30, 41, 59, 0.85) 100%);
+    }
+    .marquee-container {
+      background: linear-gradient(90deg, #065f46, #059669);
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: marquee 30s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+    .card-zoom:hover img {
+      transform: scale(1.05);
+    }
+    .transition-custom {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+  <style>
+  .marquee-container{
+    width:100%;
+    overflow:hidden;
+    background:linear-gradient(90deg,#065f46,#059669);
+    height:42px;
+    display:flex;
+    align-items:center;
+}
+
+.marquee-track{
+    display:inline-block;
+    white-space:nowrap;
+    padding-left:100%;
+    animation:marquee 25s linear infinite;
+}
+
+.marquee-track:hover{
+    animation-play-state:paused;
+}
+
+.marquee-track span{
+    color:#ffffff;
+    font-size:16px;
+    font-weight:700;
+    letter-spacing:.5px;
+    padding-right:80px;
+}
+
+@keyframes marquee{
+    from{
+        transform:translateX(0);
+    }
+    to{
+        transform:translateX(-100%);
+    }
+}
+  
+
+  @keyframes marquee {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+  }
+  
+  /* Memberhentikan teks saat diarahkan kursor (Opsional) */
+  .marquee-container:hover .marquee-text {
+    animation-play-state: paused;
+  }
+</style>
+</div>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800 antialiased">
+
+  <!-- TOP INFORMATION BAR -->
+<div class="bg-gradient-to-r from-emerald-700 via-emerald-600 to-emerald-700">
+
+    <div class="max-w-7xl mx-auto px-4 py-3">
+
+        <div class="flex flex-col lg:flex-row justify-between items-center gap-3">
+
+            <div class="flex items-center gap-3">
+
+                <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                    <i class="fas fa-bullhorn text-yellow-300"></i>
+                </div>
+
+                <div>
+
+                    <h4 class="text-white font-bold">
+                        Informasi Terbaru
+                    </h4>
+
+                    <p class="text-emerald-100 text-sm">
+                        Selamat Datang di Website Resmi SMP Negeri 1 Cangkringan •
+                        Sekolah Unggul • Berkarakter • Berwawasan Lingkungan
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="flex gap-2">
+
+                <a href="#berita"
+                   class="bg-white text-emerald-700 px-4 py-2 rounded-lg font-semibold hover:bg-yellow-300 transition">
+                    Berita
+                </a>
+
+                <a href="#spmb"
+                   class="bg-orange-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-orange-600 transition">
+                    SPMB
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- MAIN NAV -->
+    <nav class="nav-glass transition-custom">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <div class="flex justify-between items-center">
+          
+          <!-- Logo & Brand -->
+          <a href="#" onclick="showSection('home')" class="flex items-center gap-3 group">
+            <div class="w-12 h-12 rounded-full overflow-hidden bg-white shadow-inner p-1 group-hover:scale-105 transition-custom">
+              <img src="Logo sekolah SPENECA.png" alt="Logo SPENECA" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/100?text=SPENECA'">
+            </div>
+            <div>
+              <h1 class="text-white font-extrabold text-base sm:text-lg tracking-tight leading-none">SMP Negeri 1 Cangkringan</h1>
+              <span class="text-orange-100 text-[11px] sm:text-xs tracking-widest font-medium uppercase mt-1 block">Vidya Giri Prastista</span>
+            </div>
+          </a>
+
+          <!-- Desktop Navigation Menu -->
+          <div class="hidden lg:flex items-center gap-1">
+            <a href="#" onclick="showSection('home')" class="px-4 py-2 text-white hover:bg-white/10 rounded-lg text-sm font-semibold transition-custom flex items-center gap-2"><i class="fa-solid fa-house"></i> Beranda</a>
+            <a href="#" onclick="showSection('profil')" class="px-4 py-2 text-white hover:bg-white/10 rounded-lg text-sm font-semibold transition-custom flex items-center gap-2"><i class="fa-solid fa-user"></i> Profil</a>
+            
+            <!-- Dropdown Akademik -->
+            <div class="relative group">
+              <button class="px-4 py-2 text-white hover:bg-white/10 rounded-lg text-sm font-semibold transition-custom flex items-center gap-1">
+                <i class="fa-solid fa-book-open"></i> Akademik <i class="fa-solid fa-chevron-down text-[10px] ml-1"></i>
+              </button>
+              <div class="absolute left-0 top-full hidden group-hover:block pt-2 w-56">
+                <div class="bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden py-1">
+                  <a href="#" onclick="showSection('kurikulum')" class="px-4 py-2.5 text-sm text-slate-700 hover:bg-orange-50 hover:text-orange-600 font-medium flex items-center gap-2 transition-custom"><i class="fa-solid fa-scroll text-orange-500"></i> Kurikulum</a>
+                  <a href="#" onclick="showSection('jadwal')" class="px-4 py-2.5 text-sm text-slate-700 hover:bg-orange-50 hover:text-orange-600 font-medium flex items-center gap-2 transition-custom"><i class="fa-solid fa-calendar-days text-orange-500"></i> Jadwal Pelajaran</a>
+                  <a href="#" onclick="showSection('Soalliterasi')" class="px-4 py-2.5 text-sm text-slate-700 hover:bg-orange-50 hover:text-orange-600 font-medium flex items-center gap-2 transition-custom"><i class="fa-solid fa-pen-to-square text-orange-500"></i> Soal Literasi</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dropdown Guru & Fasilitas -->
+            <div class="relative group">
+              <button class="px-4 py-2 text-white hover:bg-white/10 rounded-lg text-sm font-semibold transition-custom flex items-center gap-1">
+                <i class="fa-solid fa-school"></i> Guru & Sarana <i class="fa-solid fa-chevron-down text-[10px] ml-1"></i>
+              </button>
+              <div class="absolute left-0 top-full hidden group-hover:block pt-2 w-56">
+                <div class="bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden py-1">
+                  <a href="#" onclick="showSection('guru')" class="px-4 py-2.5 text-sm text-slate-700 hover:bg-orange-50 hover:text-orange-600 font-medium flex items-center gap-2 transition-custom"><i class="fa-solid fa-users text-orange-500"></i> Daftar Guru</a>
+                  <a href="#" onclick="showSection('fasilitas')" class="px-4 py-2.5 text-sm text-slate-700 hover:bg-orange-50 hover:text-orange-600 font-medium flex items-center gap-2 transition-custom"><i class="fa-solid fa-building-columns text-orange-500"></i> Fasilitas Sekolah</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dropdown Galeri -->
+            <div class="relative group">
+              <button class="px-4 py-2 text-white hover:bg-white/10 rounded-lg text-sm font-semibold transition-custom flex items-center gap-1">
+                <i class="fa-solid fa-images"></i> Galeri <i class="fa-solid fa-chevron-down text-[10px] ml-1"></i>
+              </button>
+              <div class="absolute left-0 top-full hidden group-hover:block pt-2 w-56">
+                <div class="bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden py-1">
+                  <a href="#" onclick="showSection('galeri')" class="px-4 py-2.5 text-sm text-slate-700 hover:bg-orange-50 hover:text-orange-600 font-medium flex items-center gap-2 transition-custom"><i class="fa-solid fa-image text-orange-500"></i> Foto Galeri</a>
+                  <a href="video.html" class="px-4 py-2.5 text-sm text-slate-700 hover:bg-orange-50 hover:text-orange-600 font-medium flex items-center gap-2 transition-custom"><i class="fa-solid fa-video text-orange-500"></i> Dokumentasi Video</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dropdown Data Siswa -->
+            <div class="relative group">
+              <button class="px-4 py-2 text-white hover:bg-white/10 rounded-lg text-sm font-semibold transition-custom flex items-center gap-1">
+                <i class="fa-solid fa-database"></i> Data Sekolah <i class="fa-solid fa-chevron-down text-[10px] ml-1"></i>
+              </button>
+              <div class="absolute right-0 top-full hidden group-hover:block pt-2 w-56">
+                <div class="bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden py-1">
+                  <a href="#" onclick="showSection('datasiswa')" class="px-4 py-2.5 text-sm text-slate-700 hover:bg-orange-50 hover:text-orange-600 font-medium flex items-center gap-2 transition-custom"><i class="fa-solid fa-file-invoice text-orange-500"></i> Data Siswa Aktif</a>
+                  <a href="#" onclick="showSection('dataalumni')" class="px-4 py-2.5 text-sm text-slate-700 hover:bg-orange-50 hover:text-orange-600 font-medium flex items-center gap-2 transition-custom"><i class="fa-solid fa-graduation-cap text-orange-500"></i> Data Alumni</a>
+                  <a href="#" onclick="showSection('tatatertib')" class="px-4 py-2.5 text-sm text-slate-700 hover:bg-orange-50 hover:text-orange-600 font-medium flex items-center gap-2 transition-custom"><i class="fa-solid fa-scale-balanced text-orange-500"></i> Tata Tertib</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dropdown Informasi -->
+            <div class="relative group">
+              <button class="px-4 py-2 text-white hover:bg-white/10 rounded-lg text-sm font-semibold transition-custom flex items-center gap-1">
+                <i class="fa-solid fa-circle-info"></i> Informasi <i class="fa-solid fa-chevron-down text-[10px] ml-1"></i>
+              </button>
+              <div class="absolute right-0 top-full hidden group-hover:block pt-2 w-56">
+                <div class="bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden py-1">
+                  <a href="#" onclick="showSection('spmb')" class="px-4 py-2.5 text-sm text-slate-700 hover:bg-orange-50 hover:text-orange-600 font-medium flex items-center gap-2 transition-custom"><i class="fa-solid fa-user-plus text-orange-500"></i> Informasi PPDB/SPMB</a>
+                  <a href="https://erapot-smp.netlify.app/" target="_blank" class="px-4 py-2.5 text-sm text-slate-700 hover:bg-orange-50 hover:text-orange-600 font-medium flex items-center gap-2 transition-custom"><i class="fa-solid fa-chart-line text-orange-500"></i> Portal e-Rapor</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="lg:hidden">
+            <button onclick="toggleMobileMenu()" class="p-2 text-white rounded-lg hover:bg-white/10 focus:outline-none transition-custom" aria-label="Toggle Menu">
+              <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- MOBILE DROPDOWN MENU -->
+      <div id="mobileMenu" class="hidden lg:hidden bg-white/95 backdrop-blur-md border-t border-slate-100 px-4 py-4 space-y-2 shadow-2xl transition-custom max-h-[80vh] overflow-y-auto">
+        <a href="#" onclick="showSection('home')" class="block p-3 rounded-xl bg-orange-50 text-orange-600 font-semibold flex items-center gap-3"><i class="fa-solid fa-house"></i> Beranda</a>
+        <a href="#" onclick="showSection('profil')" class="block p-3 rounded-xl hover:bg-slate-50 font-semibold flex items-center gap-3 transition-custom"><i class="fa-solid fa-user text-slate-400"></i> Profil</a>
+        
+        <!-- Mobile Dropdown Accordion: Akademik -->
+        <div>
+          <button onclick="toggleMobileDropdown('akademikMobile')" class="w-full text-left p-3 rounded-xl hover:bg-slate-50 font-semibold flex justify-between items-center transition-custom">
+            <span class="flex items-center gap-3"><i class="fa-solid fa-book-open text-slate-400"></i> Akademik</span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300" id="akademikMobileArrow"></i>
+          </button>
+          <div id="akademikMobile" class="hidden pl-6 space-y-1 mt-1">
+            <a href="#" onclick="showSection('kurikulum')" class="block py-2 px-3 text-sm text-slate-600 hover:text-orange-600 font-medium flex items-center gap-2"><i class="fa-solid fa-circle text-[6px]"></i> Kurikulum</a>
+            <a href="#" onclick="showSection('jadwal')" class="block py-2 px-3 text-sm text-slate-600 hover:text-orange-600 font-medium flex items-center gap-2"><i class="fa-solid fa-circle text-[6px]"></i> Jadwal Pelajaran</a>
+            <a href="#" onclick="showSection('Soalliterasi')" class="block py-2 px-3 text-sm text-slate-600 hover:text-orange-600 font-medium flex items-center gap-2"><i class="fa-solid fa-circle text-[6px]"></i> Soal Literasi</a>
+          </div>
+        </div>
+
+        <!-- Mobile Dropdown Accordion: Guru & Sarana -->
+        <div>
+          <button onclick="toggleMobileDropdown('guruMobile')" class="w-full text-left p-3 rounded-xl hover:bg-slate-50 font-semibold flex justify-between items-center transition-custom">
+            <span class="flex items-center gap-3"><i class="fa-solid fa-school text-slate-400"></i> Guru & Sarana</span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300" id="guruMobileArrow"></i>
+          </button>
+          <div id="guruMobile" class="hidden pl-6 space-y-1 mt-1">
+            <a href="#" onclick="showSection('guru')" class="block py-2 px-3 text-sm text-slate-600 hover:text-orange-600 font-medium flex items-center gap-2"><i class="fa-solid fa-circle text-[6px]"></i> Daftar Guru</a>
+            <a href="#" onclick="showSection('fasilitas')" class="block py-2 px-3 text-sm text-slate-600 hover:text-orange-600 font-medium flex items-center gap-2"><i class="fa-solid fa-circle text-[6px]"></i> Fasilitas</a>
+          </div>
+        </div>
+
+        <!-- Mobile Dropdown Accordion: Galeri -->
+        <div>
+          <button onclick="toggleMobileDropdown('galeriMobile')" class="w-full text-left p-3 rounded-xl hover:bg-slate-50 font-semibold flex justify-between items-center transition-custom">
+            <span class="flex items-center gap-3"><i class="fa-solid fa-images text-slate-400"></i> Galeri</span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300" id="galeriMobileArrow"></i>
+          </button>
+          <div id="galeriMobile" class="hidden pl-6 space-y-1 mt-1">
+            <a href="#" onclick="showSection('galeri')" class="block py-2 px-3 text-sm text-slate-600 hover:text-orange-600 font-medium flex items-center gap-2"><i class="fa-solid fa-circle text-[6px]"></i> Foto Galeri</a>
+            <a href="video.html" class="block py-2 px-3 text-sm text-slate-600 hover:text-orange-600 font-medium flex items-center gap-2"><i class="fa-solid fa-circle text-[6px]"></i> Video</a>
+          </div>
+        </div>
+
+        <!-- Mobile Dropdown Accordion: Data Sekolah -->
+        <div>
+          <button onclick="toggleMobileDropdown('dataMobile')" class="w-full text-left p-3 rounded-xl hover:bg-slate-50 font-semibold flex justify-between items-center transition-custom">
+            <span class="flex items-center gap-3"><i class="fa-solid fa-database text-slate-400"></i> Data Sekolah</span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300" id="dataMobileArrow"></i>
+          </button>
+          <div id="dataMobile" class="hidden pl-6 space-y-1 mt-1">
+            <a href="#" onclick="showSection('datasiswa')" class="block py-2 px-3 text-sm text-slate-600 hover:text-orange-600 font-medium flex items-center gap-2"><i class="fa-solid fa-circle text-[6px]"></i> Data Siswa</a>
+            <a href="#" onclick="showSection('dataalumni')" class="block py-2 px-3 text-sm text-slate-600 hover:text-orange-600 font-medium flex items-center gap-2"><i class="fa-solid fa-circle text-[6px]"></i> Data Alumni</a>
+            <a href="#" onclick="showSection('tatatertib')" class="block py-2 px-3 text-sm text-slate-600 hover:text-orange-600 font-medium flex items-center gap-2"><i class="fa-solid fa-circle text-[6px]"></i> Tata Tertib</a>
+          </div>
+        </div>
+
+        <!-- Mobile Dropdown Accordion: Informasi -->
+        <div>
+          <button onclick="toggleMobileDropdown('infoMobile')" class="w-full text-left p-3 rounded-xl hover:bg-slate-50 font-semibold flex justify-between items-center transition-custom">
+            <span class="flex items-center gap-3"><i class="fa-solid fa-circle-info text-slate-400"></i> Informasi</span>
+            <i class="fa-solid fa-chevron-down text-xs transition-transform duration-300" id="infoMobileArrow"></i>
+          </button>
+          <div id="infoMobile" class="hidden pl-6 space-y-1 mt-1">
+            <a href="#" onclick="showSection('spmb')" class="block py-2 px-3 text-sm text-slate-600 hover:text-orange-600 font-medium flex items-center gap-2"><i class="fa-solid fa-circle text-[6px]"></i> Informasi PPDB</a>
+            <a href="https://erapor.kemdikbud.go.id/" target="_blank" class="block py-2 px-3 text-sm text-slate-600 hover:text-orange-600 font-medium flex items-center gap-2"><i class="fa-solid fa-circle text-[6px]"></i> e-Rapor</a>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </div>
+
+  <!-- MAIN WRAPPER -->
+  <main class="pt-[140px] min-h-screen">
+
+    <!-- BERANDA (HOME) -->
+    <section id="home" class="section active transition-custom">
+      
+      <!-- HERO SECTIONS WITH NEWS SIDEBAR -->
+      <div class="relative bg-slate-900 min-h-[calc(100vh-140px)] flex flex-col xl:flex-row overflow-hidden">
+        <!-- Background Img Overlay -->
+        <div class="absolute inset-0 z-0">
+          <img src="sekolah.jpeg" alt="Gedung SMPN 1 Cangkringan" class="w-full h-full object-cover filter blur-[2px]" onerror="this.src='https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1470'">
+          <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <!-- KIRI: Selamat Datang / Slogan -->
+        <div class="relative z-10 flex-1 px-6 sm:px-12 py-16 flex flex-col justify-center text-white">
+          <div class="max-w-2xl bg-slate-900/40 backdrop-blur-md p-8 rounded-2xl border border-white/10 shadow-2xl">
+            <span class="text-orange-400 font-extrabold tracking-widest text-sm uppercase flex items-center gap-2 mb-4">
+              <i class="fa-solid fa-award text-yellow-400"></i> Terakreditasi A
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-black mb-4 leading-tight tracking-tight">Selamat Datang di Portal Resmi SPENECA</h2>
+            <p class="text-slate-200 text-base sm:text-lg leading-relaxed font-light mb-6">
+              Mewujudkan proses belajar yang aktif, inovatif, dan berbudaya lingkungan. Berdiri tegak di lereng Gunung Merapi dengan prestasi luhur dan wawasan global.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <button onclick="showSection('profil')" class="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl shadow-lg shadow-orange-500/30 transition-custom flex items-center gap-2">
+                <i class="fa-solid fa-compass"></i> Jelajahi Profil
+              </button>
+              <button onclick="showSection('spmb')" class="px-6 py-3 bg-white/15 hover:bg-white/25 text-white font-semibold rounded-xl border border-white/20 transition-custom flex items-center gap-2">
+                <i class="fa-solid fa-graduation-cap"></i> Info Pendaftaran
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- KANAN: Slider Berita Terbaru -->
+        <div class="relative z-10 w-full xl:w-[420px] bg-white/95 xl:bg-white/90 xl:backdrop-blur-lg flex flex-col border-t xl:border-t-0 xl:border-l border-slate-200 shadow-2xl h-[600px] xl:h-auto">
+          <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+            <h3 class="font-extrabold text-slate-800 text-lg flex items-center gap-2">
+              <i class="fa-solid fa-newspaper text-orange-500"></i> Berita & Kegiatan
+            </h3>
+            <!-- Slider Controls -->
+            <div class="flex gap-1.5">
+              <button onclick="prevSlide()" class="w-8 h-8 rounded-full border border-slate-200 hover:bg-slate-100 flex items-center justify-center text-slate-600 transition-custom">
+                <i class="fa-solid fa-chevron-left text-xs"></i>
+              </button>
+              <button onclick="nextSlide()" class="w-8 h-8 rounded-full border border-slate-200 hover:bg-slate-100 flex items-center justify-center text-slate-600 transition-custom">
+                <i class="fa-solid fa-chevron-right text-xs"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- News Content Container -->
+          <div id="newsSlider" class="relative flex-1 overflow-hidden p-6">
+            
+            <!-- Slide 1 -->
+            <div class="slide absolute inset-x-6 top-6 bottom-6 flex flex-col opacity-100 transition-opacity duration-700 pointer-events-auto">
+              <div class="h-44 rounded-xl overflow-hidden mb-4 shadow-sm">
+                <img src="SMA.png" alt="INFO SPMB" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x250?text=SPMB+SMA'">
+              </div>
+              <span class="text-[10px] bg-orange-100 text-orange-700 font-bold px-2 py-1 rounded-md uppercase self-start mb-2">Informasi</span>
+              <h4 class="font-bold text-slate-800 text-base leading-snug hover:text-orange-600 transition-custom mb-2">INFO SPMB SMA/SMK TAHUN AJARAN 2026/2027</h4>
+              <p class="text-sm text-slate-600 leading-relaxed line-clamp-3 mb-4">Informasi terbaru mengenai SPMB tingkat SMA/SMK DIY dapat dilihat dan diakses secara lengkap melalui berkas juknis.</p>
+              <a href="SPMB_SMA.pdf" target="_blank" class="mt-auto px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold text-center flex items-center justify-center gap-2 transition-custom">
+                <i class="fa-solid fa-file-pdf"></i> Unduh Juknis
+              </a>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide absolute inset-x-6 top-6 bottom-6 flex flex-col opacity-0 transition-opacity duration-700 pointer-events-none">
+              <div class="h-44 rounded-xl overflow-hidden mb-4 shadow-sm">
+                <img src="sertijab.jpeg" alt="Serah Terima Jabatan" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=400'">
+              </div>
+              <span class="text-[10px] bg-orange-100 text-orange-700 font-bold px-2 py-1 rounded-md uppercase self-start mb-2">Agenda</span>
+              <h4 class="font-bold text-slate-800 text-base leading-snug mb-2">Serah Terima Jabatan Kepala Sekolah</h4>
+              <p class="text-sm text-slate-600 leading-relaxed line-clamp-4">Estafet kepemimpinan baru untuk membawa SMP Negeri 1 Cangkringan menuju cakrawala yang semakin cerah dengan fokus penguatan karakter.</p>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide absolute inset-x-6 top-6 bottom-6 flex flex-col opacity-0 transition-opacity duration-700 pointer-events-none">
+              <div class="h-44 rounded-xl overflow-hidden mb-4 shadow-sm">
+                <img src="sayegan.jpeg" alt="Studi Tiru" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x250?text=Studi+Tiru'">
+              </div>
+              <span class="text-[10px] bg-emerald-100 text-emerald-700 font-bold px-2 py-1 rounded-md uppercase self-start mb-2">Adiwiyata</span>
+              <h4 class="font-bold text-slate-800 text-base leading-snug mb-2">Studi Tiru Adiwiyata Ke SMPN 1 Sayegan</h4>
+              <p class="text-sm text-slate-600 leading-relaxed line-clamp-4">SMP Negeri 1 Cangkringan melakukan kunjungan studi tiru ke SMP Negeri 1 Sayegan dalam rangka penguatan program aksi sekolah ramah lingkungan berkelanjutan.</p>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slide absolute inset-x-6 top-6 bottom-6 flex flex-col opacity-0 transition-opacity duration-700 pointer-events-none">
+              <div class="h-44 rounded-xl overflow-hidden mb-4 shadow-sm">
+                <img src="WKM.jpeg" alt="WKM" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x250?text=WKM'">
+              </div>
+              <span class="text-[10px] bg-blue-100 text-blue-700 font-bold px-2 py-1 rounded-md uppercase self-start mb-2">Edukasi</span>
+              <h4 class="font-bold text-slate-800 text-base leading-snug mb-2">Kegiatan Wajib Kunjung Museum</h4>
+              <p class="text-sm text-slate-600 leading-relaxed line-clamp-4">Membangun wawasan nusantara, siswa-siswi berkunjung ke Museum Sonobudoyo dan Benteng Vredeburg untuk menggali jejak historis bangsa.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- KEPALA SEKOLAH (SAMBUTAN) -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 flex flex-col lg:flex-row gap-12 p-8 sm:p-12">
+          
+          <!-- Foto & Biodata Kiri -->
+          <div class="w-full lg:w-72 flex-shrink-0 flex flex-col items-center">
+            <div class="relative w-48 h-48 rounded-2xl overflow-hidden border-4 border-orange-400 shadow-xl mb-6">
+              <img src="nur.png" alt="Kepala Sekolah" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300?text=Kepala+Sekolah'">
+            </div>
+            
+            <div class="w-full bg-slate-50 border border-slate-100 p-6 rounded-2xl text-slate-700">
+              <h4 class="font-bold text-lg text-slate-900 mb-1 text-center">Nur Siti Fatimah, S.Pd.</h4>
+              <p class="text-xs text-orange-600 font-bold uppercase tracking-wider text-center mb-4">Kepala Sekolah</p>
+              
+              <div class="space-y-3 text-sm">
+                <div class="border-b border-slate-100 pb-2">
+                  <span class="block text-[10px] text-slate-400 uppercase tracking-wider font-bold">Pendidikan</span>
+                  <span class="font-medium text-slate-800">S1 Pendidikan Bahasa Inggris</span>
+                </div>
+                <div>
+                  <span class="block text-[10px] text-slate-400 uppercase tracking-wider font-bold">Visi Kepala</span>
+                  <p class="text-xs text-slate-600 leading-relaxed mt-1">Mewujudkan sekolah unggul dalam prestasi, berkarakter luhur, berbudaya adiluhung, serta kuat menjaga lingkungan.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Deskripsi Sambutan Kanan -->
+          <div class="flex-1 flex flex-col justify-center">
+            <span class="text-xs text-orange-600 font-black uppercase tracking-widest mb-2 block">Sambutan Hangat</span>
+            <h3 class="text-2xl sm:text-3xl font-black text-slate-900 mb-6 leading-tight">Membentuk Generasi Berdaya Saing Global yang Peduli Lingkungan</h3>
+            
+            <div class="space-y-4 text-slate-600 leading-relaxed text-justify">
+              <p class="font-medium text-slate-800 text-lg">Assalamu'alaikum warahmatullahi wabarakatuh.</p>
+              <p>
+                Segala puji ke hadirat Allah SWT yang telah melimpahkan berkah-Nya kepada kita semua. Website ini hadir sebagai gerbang informasi tepercaya dan representasi kemajuan digitalisasi layanan di lingkungan **SMP Negeri 1 Cangkringan**.
+              </p>
+              <p>
+                Kami berkomitmen menciptakan ekosistem belajar yang asri, nyaman, dan dinamis di bawah lereng Merapi. Melalui sistem pembelajaran terpadu, kami berfokus pada:
+              </p>
+              <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 py-2 text-sm">
+                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-emerald-500 mt-1"></i> <span>Pembelajaran Mendalam (Deep Learning)</span></li>
+                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-emerald-500 mt-1"></i> <span>Kolaborasi Lintas Mapel (P5)</span></li>
+                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-emerald-500 mt-1"></i> <span>Pengembangan Budaya Adiwiyata</span></li>
+                <li class="flex items-start gap-2.5"><i class="fa-solid fa-circle-check text-emerald-500 mt-1"></i> <span>Integrasi Teknologi Digital Terkini</span></li>
+              </ul>
+              <p>
+                Kami mengajak semua elemen, baik guru, wali murid, alumni, hingga masyarakat luas, untuk terus melangkah bersama dan bersinergi melahirkan kader-kader penerus bangsa yang andal, religius, dan berdaya saing global.
+              </p>
+              <p class="font-medium text-slate-800">Wassalamu'alaikum warahmatullahi wabarakatuh.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFIL SEKOLAH -->
+    <section id="profil" class="section hidden transition-custom py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-orange-600 font-black uppercase tracking-widest text-xs">Tentang Kami</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Profil SMPN 1 Cangkringan</h2>
+          <div class="w-16 h-1.5 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <div class="space-y-6">
+            <h3 class="text-2xl font-bold text-slate-900">Sejarah & Legalitas Pendirian</h3>
+            <p class="text-slate-600 leading-relaxed text-justify">
+              SMP Negeri 1 Cangkringan didirikan dengan cita-cita mencerdaskan anak bangsa di kawasan utara Sleman. Sekolah ini diresmikan berdasarkan Surat Keputusan Pendirian nomor <strong class="text-slate-800">0865/Perw.PK/A/1974</strong> pada akhir tahun 1974. Sejak saat itu, sekolah terus bertransformasi menjadi pusat pendidikan unggul di lereng Merapi.
+            </p>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="p-4 bg-white rounded-xl border border-slate-100 shadow-sm">
+                <span class="text-xs text-slate-400 block font-semibold">Berdiri Sejak</span>
+                <span class="text-slate-800 font-bold">28 Desember 1974</span>
+              </div>
+              <div class="p-4 bg-white rounded-xl border border-slate-100 shadow-sm">
+                <span class="text-xs text-slate-400 block font-semibold">Izin Operasional</span>
+                <span class="text-slate-800 font-bold">28 Des 1974</span>
+              </div>
+              <div class="p-4 bg-white rounded-xl border border-slate-100 shadow-sm">
+                <span class="text-xs text-slate-400 block font-semibold">Status Kepemilikan</span>
+                <span class="text-slate-800 font-bold">Pemerintah Daerah</span>
+              </div>
+              <div class="p-4 bg-white rounded-xl border border-slate-100 shadow-sm">
+                <span class="text-xs text-slate-400 block font-semibold">Bentuk Pendidikan</span>
+                <span class="text-slate-800 font-bold">SMP Negeri</span>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-3xl overflow-hidden shadow-lg h-96 relative border border-slate-100">
+            <img src="sekolah.jpeg" alt="Gedung Sekolah" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1470'">
+          </div>
+        </div>
+
+        <!-- VISI & MISI -->
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+          <div class="bg-gradient-to-br from-orange-500 to-orange-600 p-8 sm:p-10 rounded-2xl shadow-xl text-white">
+            <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-6 text-xl"><i class="fa-solid fa-eye"></i></div>
+            <h3 class="text-2xl font-bold mb-4">Visi Sekolah</h3>
+            <p class="text-orange-50 text-lg leading-relaxed font-semibold italic">
+              "Mewujudkan peserta didik yang berbudi pekerti luhur, berprestasi, berwawasan lingkungan, berbudaya dan berdaya saing global."
+            </p>
+          </div>
+          <div class="bg-gradient-to-br from-emerald-600 to-emerald-700 p-8 sm:p-10 rounded-2xl shadow-xl text-white">
+            <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-6 text-xl"><i class="fa-solid fa-bullseye"></i></div>
+            <h3 class="text-2xl font-bold mb-4">Misi Sekolah</h3>
+            <ul class="space-y-3 text-emerald-50 text-sm sm:text-base">
+              <li class="flex items-start gap-3"><i class="fa-solid fa-chevron-right mt-1.5 text-xs text-yellow-300"></i> Membimbing moral peserta didik dengan pendidikan karakter khas Indonesia.</li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-chevron-right mt-1.5 text-xs text-yellow-300"></i> Mewujudkan ekosistem sekolah yang inovatif dalam pembelajaran.</li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-chevron-right mt-1.5 text-xs text-yellow-300"></i> Mengembangkan manajemen berbasis sekolah yang tangguh dan kolaboratif.</li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-chevron-right mt-1.5 text-xs text-yellow-300"></i> Mewujudkan pembinaan kompetensi akademik secara kompetitif.</li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-chevron-right mt-1.5 text-xs text-yellow-300"></i> Meningkatkan bakat dan minat melalui bimbingan ekstrakurikuler bermutu.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- KONTAK PERSON (HUMAS) -->
+        <div>
+          <h3 class="text-2xl font-bold text-slate-900 text-center mb-8">Hubungi Layanan Informasi</h3>
+          <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            
+            <!-- Kepala Sekolah Contact -->
+            <div class="bg-white rounded-2xl border border-slate-100 p-6 flex flex-col sm:flex-row gap-6 items-center shadow-sm">
+              <div class="w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 border-2 border-orange-200">
+                <img src="nur.png" alt="Nur Siti Fatimah, S.Pd" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/150'">
+              </div>
+              <div class="flex-1 text-center sm:text-left">
+                <h4 class="font-extrabold text-slate-900 text-base">Nur Siti Fatimah, S.Pd.</h4>
+                <p class="text-xs text-orange-600 font-bold mb-3">Kepala Sekolah</p>
+                <a href="https://wa.me/081903779207" target="_blank" class="inline-flex items-center gap-2 text-xs bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-4 py-2 rounded-lg transition-custom">
+                  <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Hub
+                </a>
+              </div>
+            </div>
+
+            <!-- Humas Contact -->
+            <div class="bg-white rounded-2xl border border-slate-100 p-6 flex flex-col sm:flex-row gap-6 items-center shadow-sm">
+              <div class="w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 border-2 border-orange-200">
+                <img src="ndaru16.JPG" alt="Ndaru Kurniawan S, S.Pd" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/150'">
+              </div>
+              <div class="flex-1 text-center sm:text-left">
+                <h4 class="font-extrabold text-slate-900 text-base">Ndaru Kurniawan S, S.Pd.</h4>
+                <p class="text-xs text-orange-600 font-bold mb-3">Humas Sekolah</p>
+                <a href="https://wa.me/6285869612566" target="_blank" class="inline-flex items-center gap-2 text-xs bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-4 py-2 rounded-lg transition-custom">
+                  <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Hub
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- KURIKULUM -->
+    <section id="kurikulum" class="section hidden transition-custom py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-orange-600 font-black uppercase tracking-widest text-xs">Sistem Akademik</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Kurikulum Operasional</h2>
+          <div class="w-16 h-1.5 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm max-w-4xl mx-auto mb-12">
+          <p class="text-slate-600 leading-relaxed text-center text-lg">
+            SMP Negeri 1 Cangkringan dengan bangga menerapkan **Kurikulum Merdeka**. Sistem kurikulum ini didesain penuh untuk memberikan ruang eksplorasi inovasi belajar anak, melatih keterampilan abad ke-21, serta mendalami integrasi teknologi digital sejak dini.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-orange-50 p-8 rounded-2xl border border-orange-100 flex flex-col items-center text-center">
+            <div class="w-14 h-14 bg-orange-500 rounded-xl flex items-center justify-center text-white text-xl mb-6 shadow-md"><i class="fa-solid fa-compass"></i></div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Program Inovatif</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Fokus pengayaan projek kearifan lokal, penguatan numerasi-literasi digital, serta penerapan metode kolaboratif menyenangkan.</p>
+          </div>
+          <div class="bg-blue-50 p-8 rounded-2xl border border-blue-100 flex flex-col items-center text-center">
+            <div class="w-14 h-14 bg-blue-500 rounded-xl flex items-center justify-center text-white text-xl mb-6 shadow-md"><i class="fa-solid fa-puzzle-piece"></i></div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Ekstrakurikuler Bermutu</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Beragam pilihan mulai dari Pramuka Utama, OSIS, Karya Ilmiah Remaja (OPSI), Olahraga Prestasi, Seni Tari, Desain Komunikasi Visual, dan Jurnalistik.</p>
+          </div>
+          <div class="bg-emerald-50 p-8 rounded-2xl border border-emerald-100 flex flex-col items-center text-center">
+            <div class="w-14 h-14 bg-emerald-600 rounded-xl flex items-center justify-center text-white text-xl mb-6 shadow-md"><i class="fa-solid fa-trophy"></i></div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2">Prestasi & Konseling</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Pendampingan akademik intensif serta dukungan berkala bimbingan konseling guna memastikan kesehatan mental & kesiapan belajar siswa.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- JADWAL PELAJARAN -->
+    <section id="jadwal" class="section hidden transition-custom py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-orange-600 font-black uppercase tracking-widest text-xs">Agenda Belajar</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Jadwal Pelajaran Sekolah</h2>
+          <div class="w-16 h-1.5 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100">
+          <div class="p-4 bg-slate-900 text-white flex justify-between items-center px-6">
+            <span class="text-sm font-bold flex items-center gap-2"><i class="fa-solid fa-calendar text-orange-400"></i> Jadwal Aktif Saat Ini</span>
+            <a href="JADWAL.jpeg" target="_blank" class="text-xs bg-white/10 hover:bg-white/20 text-white px-3 py-1.5 rounded-lg transition-custom"><i class="fa-solid fa-up-right-from-square"></i> Layar Penuh</a>
+          </div>
+          <div class="aspect-[4/3] sm:aspect-[16/10] bg-slate-100 relative">
+            <img src="JADWAL.jpeg" alt="Jadwal Pelajaran" class="w-full h-full object-contain" onerror="this.src='https://placehold.co/1000x700?text=Iframe+Jadwal+Pelajaran'">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SOAL LITERASI -->
+    <section id="Soalliterasi" class="section hidden transition-custom py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-orange-600 font-black uppercase tracking-widest text-xs">Pojok Literasi</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Latihan & Hasil Soal Literasi</h2>
+          <div class="w-16 h-1.5 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          
+          <!-- Box Kelas 7 -->
+          <div class="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm">
+            <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center text-orange-600 text-lg mb-4"><i class="fa-solid fa-book-bookmark"></i></div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-3">📘 Kelas VII (Tujuh)</h3>
+            <select onchange="bukaSoal(this.value)" class="w-full bg-slate-50 border border-slate-200 text-slate-700 rounded-xl px-3 py-2.5 text-sm font-semibold focus:outline-none focus:border-orange-500 transition-custom">
+              <option value="">-- Pilih Materi / Minggu --</option>
+              <option value="Literasikelas7_1.pdf">Minggu ke-1</option>
+              
+            </select>
+          </div>
+
+          <!-- Box Kelas 8 -->
+          <div class="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm">
+            <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-600 text-lg mb-4"><i class="fa-solid fa-book-bookmark"></i></div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-3">📗 Kelas VIII (Delapan)</h3>
+            <select onchange="bukaSoal(this.value)" class="w-full bg-slate-50 border border-slate-200 text-slate-700 rounded-xl px-3 py-2.5 text-sm font-semibold focus:outline-none focus:border-emerald-500 transition-custom">
+              <option value="">-- Pilih Materi / Minggu --</option>
+              <option value="literasikelas8_1.pdf">Minggu ke-1</option>
+              <option value="literasikelas8_2.pdf">Minggu ke-2</option>
+             
+            </select>
+          </div>
+
+          <!-- Box Kelas 9 -->
+          <div class="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm">
+            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-lg mb-4"><i class="fa-solid fa-book-bookmark"></i></div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-3">📙 Kelas IX (Sembilan)</h3>
+            <select onchange="bukaSoal(this.value)" class="w-full bg-slate-50 border border-slate-200 text-slate-700 rounded-xl px-3 py-2.5 text-sm font-semibold focus:outline-none focus:border-blue-500 transition-custom">
+              <option value="">-- Pilih Materi / Minggu --</option>
+              <option value="Soallatihankelas9.pdf">Minggu ke-1</option>
+             
+            </select>
+          </div>
+
+          <!-- Box Hasil Nilai -->
+          <div class="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm">
+            <div class="w-10 h-10 bg-rose-100 rounded-lg flex items-center justify-center text-rose-600 text-lg mb-4"><i class="fa-solid fa-square-poll-vertical"></i></div>
+            <h3 class="font-extrabold text-slate-900 text-base mb-3">📊 Laporan & Hasil Nilai</h3>
+            <select onchange="bukaSoal(this.value)" class="w-full bg-slate-50 border border-slate-200 text-slate-700 rounded-xl px-3 py-2.5 text-sm font-semibold focus:outline-none focus:border-rose-500 transition-custom">
+              <option value="">-- Pilih Berkas Nilai --</option>
+              <option value="nilai_1.pdf">Minggu ke-1</option>
+             
+            </select>
+          </div>
+
+        </div>
+
+        <!-- PDF Interactive Viewer Container -->
+        <div id="soalViewer" class="hidden max-w-5xl mx-auto mt-12 bg-white rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
+          <div class="p-4 bg-slate-900 text-white flex justify-between items-center px-6">
+            <span class="text-sm font-bold flex items-center gap-2"><i class="fa-solid fa-file-pdf text-rose-500"></i> Peninjau Berkas Dokumen</span>
+            <button onclick="document.getElementById('soalViewer').style.display='none'" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-custom"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          <div class="w-full h-[650px]">
+            <iframe id="soalFrame" src="" width="100%" height="100%" style="border:none;"></iframe>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GURU & TENAGA KEPENDIDIKAN -->
+    <section id="guru" class="section hidden transition-custom py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-orange-600 font-black uppercase tracking-widest text-xs">Keluarga Besar</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Pendidik & Tenaga Kependidikan</h2>
+          <div class="w-16 h-1.5 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- Grid Guru -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+
+          <!-- Guru Card Generator -->
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="nur.png" alt="Nur Siti Fatimah, S.Pd" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Nur Siti Fatimah, S.Pd.</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Kepala Sekolah</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="dwi2.jpg" alt="DWI Suatmini, S.Pd" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">DWI Suatmini, S.Pd.</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Guru IPA</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="dar3.jpg" alt="Dariyati, S.Pd." class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Dariyati, S.Pd.</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Guru IPA</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="nanik4.jpg" alt="Dra. Nanik Eryani" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Dra. Nanik Eryani</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Guru Bimbingan Konseling</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="ardi5.jpg" alt="Ardi Harwiyanti, S.S" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Ardi Harwiyanti, S.S.</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Guru Bahasa Jawa</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="seno5.jpg" alt="Rumeko Cahyo Seno, S.Pd" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Rumeko Cahyo Seno, S.Pd.</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Guru Bahasa Inggris</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="dita6.jpg" alt="Daru Dita Widiatnie, S.Pd" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Daru Dita Widiatnie, S.Pd.</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Guru Bahasa Inggris</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="rita7.jpg" alt="Rita Suryani, S.Pd., M.Sc" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Rita Suryani, S.Pd., M.Sc.</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Guru Matematika</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="destu8.jpg" alt="Destu Firmansyah, S.Pd" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Destu Firmansyah, S.Pd.</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Guru PPKn</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="reni9.JPG" alt="Reni Nuryati, S.Pd" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Reni Nuryati, S.Pd.</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Guru Bahasa Indonesia</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="tarno10.JPG" alt="Sutarno, S.Pd" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Sutarno, S.Pd.</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Guru Bahasa Indonesia</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="kuwatni11.JPG" alt="Kuwatni, S.Pd" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Kuwatni, S.Pd.</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Guru Seni Budaya</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="huda12.JPG" alt="Anharul Huda, S.Pd" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Anharul Huda, S.Pd.</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Guru Bimbingan Konseling</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="della13.JPG" alt="Della Ayu Asihani, S.Pd" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Della Ayu Asihani, S.Pd.</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Guru Bahasa Indonesia</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="ibnu14.jpg" alt="Ibnu Iskandar H, S.Pd" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Ibnu Iskandar H, S.Pd.</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Guru PJOK</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="arif15.jpg" alt="Arif Kurniawan, S.Pd" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Arif Kurniawan, S.Pd.</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Guru IPS</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="ndaru16.JPG" alt="Ndaru Kurniawan S, S.Pd" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Ndaru Kurniawan S, S.Pd.</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Guru Seni Budaya / Humas</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="manda17.JPG" alt="Yulia Manda Sari, S.Pd" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Yulia Manda Sari, S.Pd.</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Guru Matematika</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="ade18.jpg" alt="Ade Surya Diksinarga, S.Pd" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Ade Surya Diksinarga, S.Pd.</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Guru IPS</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="wisnu19.jpg" alt="Wiby Wisnu Saputro, S.Kom" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Wiby Wisnu Saputro, S.Kom.</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Guru Informatika & KKA</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="azzizah.png" alt="Nur Fahmi Azizah, S.Pd" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Nur Fahmi Azizah, S.Pd.</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Guru Pendidikan Agama Islam</p>
+            </div>
+          </div>
+         <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="endang20.JPG" alt="Nur Fahmi Azizah, S.Pd" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Endang Sukmawati, S.Pd.</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Guru Bahasa Inggris</p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="giyanto21.JPG" alt="Giyanto, S.Pd" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Pendidik'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Giyanto, S.Pd.</h4>
+              <p class="text-[11px] text-orange-600 font-semibold mt-1">Guru Informatika</p>
+            </div>
+          </div>
+
+          <!-- Staf Administrasi (TU) -->
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="heni1.JPG" alt="Heni Widiastuti" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Staf+TU'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Heni Widiastuti</h4>
+              <p class="text-[11px] text-slate-500 font-semibold mt-1">Kepala Tata Usaha</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="sur3.JPG" alt="Suryanto, SE" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Staf+TU'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Suryanto, SE.</h4>
+              <p class="text-[11px] text-slate-500 font-semibold mt-1">Staf Tata Usaha</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="ervan2.JPG" alt="Ervan Nur Wahid, ST" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Staf+TU'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Ervan Nur Wahid, ST.</h4>
+              <p class="text-[11px] text-slate-500 font-semibold mt-1">Staf Tata Usaha</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-custom group">
+            <div class="h-80 bg-slate-100 relative overflow-hidden">
+              <img src="giyar4.JPG" alt="Sugiyarto" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/300x400?text=Staf+TU'">
+            </div>
+            <div class="p-4 text-center">
+              <h4 class="font-extrabold text-slate-900 text-sm leading-snug">Sugiyarto</h4>
+              <p class="text-[11px] text-slate-500 font-semibold mt-1">Staf Tata Usaha</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FASILITAS SEKOLAH -->
+    <section id="fasilitas" class="section hidden transition-custom py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-orange-600 font-black uppercase tracking-widest text-xs">Sarana Prasarana</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Fasilitas Penunjang Belajar</h2>
+          <div class="w-16 h-1.5 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg transition-custom group">
+            <div class="h-52 bg-slate-100 overflow-hidden">
+              <img src="tik.jpeg" alt="Lab Komputer" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://images.unsplash.com/photo-1562774053-f5a524a45158?q=80&w=600'">
+            </div>
+            <div class="p-6">
+              <h4 class="font-bold text-slate-900 text-lg mb-2">Laboratorium Komputer</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">Dilengkapi dengan unit komputer berspesifikasi mutakhir dan koneksi internet serat optik berkecepatan tinggi guna mendukung pembelajaran teknologi informasi dan digitalisasi assessments.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg transition-custom group">
+            <div class="h-52 bg-slate-100 overflow-hidden">
+              <img src="perpus.jpeg" alt="Perpustakaan" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=600'">
+            </div>
+            <div class="p-6">
+              <h4 class="font-bold text-slate-900 text-lg mb-2">Perpustakaan Literasi</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">Menyajikan ribuan koleksi buku fiksi, literatur akademik dasar, ensiklopedia penunjang, hingga portal perpustakaan digital interaktif yang modern.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg transition-custom group">
+            <div class="h-52 bg-slate-100 overflow-hidden">
+              <img src="basket.png" alt="Lapangan Olahraga" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://images.unsplash.com/photo-1546519638-68e109498ffc?q=80&w=600'">
+            </div>
+            <div class="p-6">
+              <h4 class="font-bold text-slate-900 text-lg mb-2">Lapangan Olahraga Luas</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">Fasilitas area olahraga terbuka untuk basket, bola voli, bulu tangkis, dan pelaksanaan upacara serta kegiatan rutin senam sekolah jasmani.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg transition-custom group">
+            <div class="h-52 bg-slate-100 overflow-hidden">
+              <img src="lipa.png" alt="Laboratorium IPA" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://images.unsplash.com/photo-1532187643603-ba119ca4109e?q=80&w=600'">
+            </div>
+            <div class="p-6">
+              <h4 class="font-bold text-slate-900 text-lg mb-2">Laboratorium IPA Komplet</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">Area khusus eksperimen fisika dan biologi praktis dasar lengkap dengan mikroskop optik, alat peraga sains, dan standar keamanan laboratorium tinggi.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg transition-custom group">
+            <div class="h-52 bg-slate-100 overflow-hidden">
+              <img src="kelas.png" alt="Ruang Kelas" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=600'">
+            </div>
+            <div class="p-6">
+              <h4 class="font-bold text-slate-900 text-lg mb-2">Ruang Kelas Nyaman</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">Tata ruang kelas ergonomis, sejuk, bersih, lengkap dengan proyektor multimedia pendukung visual pembelajaran dinamis interaktif.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg transition-custom group">
+            <div class="h-52 bg-slate-100 overflow-hidden">
+              <img src="ssk.jpeg" alt="Ruang SSK" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/600x400?text=Ruang+SSK'">
+            </div>
+            <div class="p-6">
+              <h4 class="font-bold text-slate-900 text-lg mb-2">Ruang Kependudukan (SSK)</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">Pusat edukasi kependudukan interaktif bersenjatakan IFP (Interactive Flat Panel) cerdas sebagai pusat digitalisasi visual materi kependudukan.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-lg transition-custom group">
+            <div class="h-52 bg-slate-100 overflow-hidden">
+              <img src="labbahasa.jpeg" alt="Laboratorium Bahasa" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/600x400?text=Lab+Bahasa'">
+            </div>
+            <div class="p-6">
+              <h4 class="font-bold text-slate-900 text-lg mb-2">Laboratorium Bahasa</h4>
+              <p class="text-sm text-slate-600 leading-relaxed">Fasilitas latihan linguistik berteknologi audio canggih dan Smart TV pendukung simulasi percakapan bahasa asing interaktif intensif.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GALERI KEGIATAN SEKOLAH -->
+    <section id="galeri" class="section hidden transition-custom py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-orange-600 font-black uppercase tracking-widest text-xs">Jejak Kegiatan</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Galeri Foto & Dokumentasi</h2>
+          <div class="w-16 h-1.5 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+          <!-- Card 1 -->
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-custom group">
+            <div class="h-48 overflow-hidden">
+              <img src="upacara.jpg" alt="Upacara" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/400x300'">
+            </div>
+            <div class="p-4">
+              <h4 class="font-bold text-slate-900 text-sm mb-1">Upacara Bendera</h4>
+              <p class="text-xs text-slate-500 leading-relaxed">Menanamkan nilai kepemimpinan, disiplin tinggi, serta cinta kedaulatan tanah air.</p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-custom group">
+            <div class="h-48 overflow-hidden">
+              <img src="tari.jpg" alt="Pentas Seni" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/400x300'">
+            </div>
+            <div class="p-4">
+              <h4 class="font-bold text-slate-900 text-sm mb-1">Pentas Seni Kreatif</h4>
+              <p class="text-xs text-slate-500 leading-relaxed">Ekspresi bakat kesenian, tari tradisional, serta teater kreatif drama sekolah.</p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-custom group">
+            <div class="h-48 overflow-hidden">
+              <img src="pramuka.jpeg" alt="Pramuka" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/400x300'">
+            </div>
+            <div class="p-4">
+              <h4 class="font-bold text-slate-900 text-sm mb-1">Pramuka Inti</h4>
+              <p class="text-xs text-slate-500 leading-relaxed">Membangun kepribadian tangguh, mandiri, solutif, serta tanggap bencana alam.</p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-custom group">
+            <div class="h-48 overflow-hidden">
+              <img src="lomba.jpg" alt="Lomba" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/400x300'">
+            </div>
+            <div class="p-4">
+              <h4 class="font-bold text-slate-900 text-sm mb-1">Kompetisi Akademik</h4>
+              <p class="text-xs text-slate-500 leading-relaxed">Berpartisipasi aktif dalam ajang olimpiade tingkat kabupaten maupun nasional.</p>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-custom group">
+            <div class="h-48 overflow-hidden">
+              <img src="motifasi.jpg" alt="Motivasi" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/400x300'">
+            </div>
+            <div class="p-4">
+              <h4 class="font-bold text-slate-900 text-sm mb-1">Pembekalan Alumni</h4>
+              <p class="text-xs text-slate-500 leading-relaxed">Sharing-sessions motivasi belajar bersama alumni sukses berorientasi kedinasan.</p>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-custom group">
+            <div class="h-48 overflow-hidden">
+              <img src="adiwiyata.jpg" alt="Adiwiyata" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/400x300'">
+            </div>
+            <div class="p-4">
+              <h4 class="font-bold text-slate-900 text-sm mb-1">Penilaian Adiwiyata</h4>
+              <p class="text-xs text-slate-500 leading-relaxed">Langkah pengukuhan komitmen kuat aksi peduli lingkungan hidup sekolah asri.</p>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-custom group">
+            <div class="h-48 overflow-hidden">
+              <img src="jumat.jpeg" alt="Jumat Bersih" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/400x300'">
+            </div>
+            <div class="p-4">
+              <h4 class="font-bold text-slate-900 text-sm mb-1">Gerakan Jumat Bersih</h4>
+              <p class="text-xs text-slate-500 leading-relaxed">Aksi gotong-royong berkala menjaga kebersihan area belajar dan sanitasi prima.</p>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-custom group">
+            <div class="h-48 overflow-hidden">
+              <img src="genius.jpeg" alt="Pedoman Genius" class="w-full h-full object-cover group-hover:scale-105 transition-custom" onerror="this.src='https://placehold.co/400x300'">
+            </div>
+            <div class="p-4 flex flex-col h-full">
+              <h4 class="font-bold text-slate-900 text-sm mb-1">Aplikasi Genius</h4>
+              <p class="text-xs text-slate-500 leading-relaxed mb-3">Sistem digital belajar komprehensif pendamping siswa mandiri berdaya saing.</p>
+              <a href="https://online.fliphtml5.com/zbbng/PEDOMAN-TEKNIS-CARA-PENGGUNAAN-GENIUS/#p=2" target="_blank" class="text-xs text-orange-600 font-bold hover:underline mt-auto flex items-center gap-1"><i class="fa-solid fa-circle-info"></i> Panduan Teknis</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DATA SISWA -->
+    <section id="datasiswa" class="section hidden transition-custom py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-orange-600 font-black uppercase tracking-widest text-xs">Pusat Data</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Daftar Presensi & Data Siswa</h2>
+          <div class="w-16 h-1.5 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-12">
+          <!-- Button Classes Generators -->
+          <button onclick="bukaPDF('7A.pdf')" class="p-4 bg-white hover:bg-orange-50 border border-slate-100 hover:border-orange-200 rounded-2xl shadow-sm hover:shadow text-center font-bold text-slate-700 hover:text-orange-600 transition-custom flex flex-col items-center gap-2"><i class="fa-solid fa-users text-lg"></i> Kelas 7A</button>
+          <button onclick="bukaPDF('7B.pdf')" class="p-4 bg-white hover:bg-orange-50 border border-slate-100 hover:border-orange-200 rounded-2xl shadow-sm hover:shadow text-center font-bold text-slate-700 hover:text-orange-600 transition-custom flex flex-col items-center gap-2"><i class="fa-solid fa-users text-lg"></i> Kelas 7B</button>
+          <button onclick="bukaPDF('7C.pdf')" class="p-4 bg-white hover:bg-orange-50 border border-slate-100 hover:border-orange-200 rounded-2xl shadow-sm hover:shadow text-center font-bold text-slate-700 hover:text-orange-600 transition-custom flex flex-col items-center gap-2"><i class="fa-solid fa-users text-lg"></i> Kelas 7C</button>
+          <button onclick="bukaPDF('7D.pdf')" class="p-4 bg-white hover:bg-orange-50 border border-slate-100 hover:border-orange-200 rounded-2xl shadow-sm hover:shadow text-center font-bold text-slate-700 hover:text-orange-600 transition-custom flex flex-col items-center gap-2"><i class="fa-solid fa-users text-lg"></i> Kelas 7D</button>
+          <button onclick="bukaPDF('8A.pdf')" class="p-4 bg-white hover:bg-orange-50 border border-slate-100 hover:border-orange-200 rounded-2xl shadow-sm hover:shadow text-center font-bold text-slate-700 hover:text-orange-600 transition-custom flex flex-col items-center gap-2"><i class="fa-solid fa-users text-lg"></i> Kelas 8A</button>
+          <button onclick="bukaPDF('8B.pdf')" class="p-4 bg-white hover:bg-orange-50 border border-slate-100 hover:border-orange-200 rounded-2xl shadow-sm hover:shadow text-center font-bold text-slate-700 hover:text-orange-600 transition-custom flex flex-col items-center gap-2"><i class="fa-solid fa-users text-lg"></i> Kelas 8B</button>
+          <button onclick="bukaPDF('8C.pdf')" class="p-4 bg-white hover:bg-orange-50 border border-slate-100 hover:border-orange-200 rounded-2xl shadow-sm hover:shadow text-center font-bold text-slate-700 hover:text-orange-600 transition-custom flex flex-col items-center gap-2"><i class="fa-solid fa-users text-lg"></i> Kelas 8C</button>
+          <button onclick="bukaPDF('8D.pdf')" class="p-4 bg-white hover:bg-orange-50 border border-slate-100 hover:border-orange-200 rounded-2xl shadow-sm hover:shadow text-center font-bold text-slate-700 hover:text-orange-600 transition-custom flex flex-col items-center gap-2"><i class="fa-solid fa-users text-lg"></i> Kelas 8D</button>
+          <button onclick="bukaPDF('9A.pdf')" class="p-4 bg-white hover:bg-orange-50 border border-slate-100 hover:border-orange-200 rounded-2xl shadow-sm hover:shadow text-center font-bold text-slate-700 hover:text-orange-600 transition-custom flex flex-col items-center gap-2"><i class="fa-solid fa-users text-lg"></i> Kelas 9A</button>
+          <button onclick="bukaPDF('9B.pdf')" class="p-4 bg-white hover:bg-orange-50 border border-slate-100 hover:border-orange-200 rounded-2xl shadow-sm hover:shadow text-center font-bold text-slate-700 hover:text-orange-600 transition-custom flex flex-col items-center gap-2"><i class="fa-solid fa-users text-lg"></i> Kelas 9B</button>
+          <button onclick="bukaPDF('9C.pdf')" class="p-4 bg-white hover:bg-orange-50 border border-slate-100 hover:border-orange-200 rounded-2xl shadow-sm hover:shadow text-center font-bold text-slate-700 hover:text-orange-600 transition-custom flex flex-col items-center gap-2"><i class="fa-solid fa-users text-lg"></i> Kelas 9C</button>
+          <button onclick="bukaPDF('9D.pdf')" class="p-4 bg-white hover:bg-orange-50 border border-slate-100 hover:border-orange-200 rounded-2xl shadow-sm hover:shadow text-center font-bold text-slate-700 hover:text-orange-600 transition-custom flex flex-col items-center gap-2"><i class="fa-solid fa-users text-lg"></i> Kelas 9D</button>
+        </div>
+
+        <!-- PDF Viewer container -->
+        <div id="pdfViewer" class="hidden max-w-5xl mx-auto mt-12 bg-white rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
+          <div class="p-4 bg-slate-900 text-white flex justify-between items-center px-6">
+            <span class="text-sm font-bold flex items-center gap-2"><i class="fa-solid fa-user-graduate text-orange-400"></i> Peninjau Berkas Presensi Kelas</span>
+            <button onclick="document.getElementById('pdfViewer').style.display='none'" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-custom"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          <div class="w-full h-[650px]">
+            <iframe id="pdfFrame" src="" width="100%" height="100%" style="border:none;"></iframe>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TATA TERTIB SEKOLAH -->
+    <section id="tatatertib" class="section hidden transition-custom py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-orange-600 font-black uppercase tracking-widest text-xs">Aturan & Etika</span>
+          <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Tata Tertib Peserta Didik</h2>
+          <div class="w-16 h-1.5 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="bg-white rounded-3xl border border-slate-100 p-8 sm:p-10 shadow-xl space-y-8">
+          
+          <!-- Poin 1 -->
+          <div>
+            <h3 class="font-extrabold text-slate-900 text-lg flex items-center gap-3 border-b border-slate-100 pb-3"><span class="w-7 h-7 rounded-lg bg-orange-500 text-white flex items-center justify-center text-xs">1</span> KETENTUAN PAKAIAN & SERAGAM</h3>
+            <ul class="mt-4 space-y-2.5 text-slate-600 text-sm pl-4">
+              <li class="flex items-start gap-2"><strong>Senin:</strong> Seragam putih-putih lengkap berjas almamater, dasi, serta topi upacara.</li>
+              <li class="flex items-start gap-2"><strong>Selasa & Kamis:</strong> Seragam resmi OSIS (putih-biru).</li>
+              <li class="flex items-start gap-2"><strong>Rabu:</strong> Pakaian lengkap Pramuka.</li>
+              <li class="flex items-start gap-2"><strong>Jumat:</strong> Batik sekolah dipadu celana/rok putih bersih.</li>
+              <li class="flex items-start gap-2"><strong class="text-rose-600">Alas Kaki:</strong> Wajib sepatu hitam polos bertali dengan kaos kaki putih di atas mata kaki (kecuali Jumat bebas rapi).</li>
+            </ul>
+          </div>
+
+          <!-- Poin 2 -->
+          <div>
+            <h3 class="font-extrabold text-slate-900 text-lg flex items-center gap-3 border-b border-slate-100 pb-3"><span class="w-7 h-7 rounded-lg bg-orange-500 text-white flex items-center justify-center text-xs">2</span> KERAPIAN & PENAMPILAN DIRI</h3>
+            <ul class="mt-4 space-y-2.5 text-slate-600 text-sm pl-4">
+              <li class="flex items-start gap-2">Rambut siswa putra dipangkas rapi standar militer (2:1:1) dan dilarang botak plontos atau bergaya ekstrem.</li>
+              <li class="flex items-start gap-2">Siswa dilarang keras mengecat rambut, bertato, memelihara kuku panjang, serta mengecat kuku.</li>
+              <li class="flex items-start gap-2">Dilarang memakai perhiasan berlebih, anting bagi putra, maupun berdandan berlebih-lebihan.</li>
+            </ul>
+          </div>
+
+          <!-- Poin 3 -->
+          <div>
+            <h3 class="font-extrabold text-slate-900 text-lg flex items-center gap-3 border-b border-slate-100 pb-3"><span class="w-7 h-7 rounded-lg bg-orange-500 text-white flex items-center justify-center text-xs">3</span> KEHADIRAN & KEDISIPLINAN</h3>
+            <ul class="mt-4 space-y-2.5 text-slate-600 text-sm pl-4">
+              <li class="flex items-start gap-2">Wajib hadir minimal 10 menit sebelum bel pelajaran berbunyi.</li>
+              <li class="flex items-start gap-2">Syarat kelulusan kenaikan kelas wajib memenuhi minimal **90% tingkat kehadiran** efektif.</li>
+              <li class="flex items-start gap-2">Alpa berturut-turut selama 3 hari akan langsung dilakukan pemanggilan resmi orang tua/wali ke sekolah.</li>
+            </ul>
+          </div>
+
+          <!-- Poin 4 -->
+          <div>
+            <h3 class="font-extrabold text-slate-900 text-lg flex items-center gap-3 border-b border-slate-100 pb-3"><span class="w-7 h-7 rounded-lg bg-orange-500 text-white flex items-center justify-center text-xs">4</span> LARANGAN UTAMA</h3>
+            <ul class="mt-4 space-y-2.5 text-slate-600 text-sm pl-4">
+              <li class="flex items-start gap-2"><strong class="text-rose-600">Gadget:</strong> HP wajib dikumpulkan di loker wali kelas/guru pendamping saat kegiatan belajar mengajar berjalan.</li>
+              <li class="flex items-start gap-2"><strong class="text-rose-600">Anti Bullying:</strong> Dilarang melakukan kekerasan verbal, fisik, perundungan siber, diskriminasi, serta intoleransi.</li>
+              <li class="flex items-start gap-2"><strong class="text-rose-600">Berkendara:</strong> Siswa dilarang membawa kendaraan bermotor ke area sekolah demi keselamatan bersama.</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DATA ALUMNI -->
+    <section id="dataalumni" class="section hidden transition-custom py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-orange-600 font-black uppercase tracking-widest text-xs">Almamater</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Database Alumni Sekolah</h2>
+          <div class="w-16 h-1.5 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-slate-100 max-w-5xl mx-auto">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-slate-900 text-white text-sm">
+                  <th class="p-4 px-6 font-bold w-20">No</th>
+                  <th class="p-4 px-6 font-bold">Nama Alumni</th>
+                  <th class="p-4 px-6 font-bold w-36">Tahun Lulus</th>
+                  <th class="p-4 px-6 font-bold">Kelanjutan Studi / Instansi</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 text-slate-700 text-sm">
+                <tr class="hover:bg-orange-50/50 transition-custom">
+                  <td class="p-4 px-6 font-semibold">1</td>
+                  <td class="p-4 px-6 font-bold text-slate-900">Acnia Octa Suci Ramadhani</td>
+                  <td class="p-4 px-6">2024</td>
+                  <td class="p-4 px-6 font-medium text-emerald-600"><i class="fa-solid fa-graduation-cap text-xs mr-1.5"></i> SMA Negeri 1 Pakem</td>
+                </tr>
+                <tr class="hover:bg-orange-50/50 transition-custom">
+                  <td class="p-4 px-6 font-semibold">2</td>
+                  <td class="p-4 px-6 font-bold text-slate-900">Aliza Fitriani</td>
+                  <td class="p-4 px-6">2024</td>
+                  <td class="p-4 px-6 font-medium text-emerald-600"><i class="fa-solid fa-graduation-cap text-xs mr-1.5"></i> SMK Negeri 1 Kalasan</td>
+                </tr>
+                <tr class="hover:bg-orange-50/50 transition-custom">
+                  <td class="p-4 px-6 font-semibold">3</td>
+                  <td class="p-4 px-6 font-bold text-slate-900">Bakil Tsakib Arrozi</td>
+                  <td class="p-4 px-6">2024</td>
+                  <td class="p-4 px-6 font-medium text-emerald-600"><i class="fa-solid fa-graduation-cap text-xs mr-1.5"></i> SMA Insan Mulia Boarding School</td>
+                </tr>
+                <tr class="hover:bg-orange-50/50 transition-custom">
+                  <td class="p-4 px-6 font-semibold">4</td>
+                  <td class="p-4 px-6 font-bold text-slate-900">Bella Anindya Chana Fradella</td>
+                  <td class="p-4 px-6">2024</td>
+                  <td class="p-4 px-6 font-medium text-emerald-600"><i class="fa-solid fa-graduation-cap text-xs mr-1.5"></i> SMK Kehutanan Kadipaten</td>
+                </tr>
+                <tr class="hover:bg-orange-50/50 transition-custom">
+                  <td class="p-4 px-6 font-semibold">5</td>
+                  <td class="p-4 px-6 font-bold text-slate-900">Melinda Rania Putri</td>
+                  <td class="p-4 px-6">2024</td>
+                  <td class="p-4 px-6 font-medium text-emerald-600"><i class="fa-solid fa-graduation-cap text-xs mr-1.5"></i> SMK Negeri 1 Kalasan</td>
+                </tr>
+                <tr class="hover:bg-orange-50/50 transition-custom">
+                  <td class="p-4 px-6 font-semibold">6</td>
+                  <td class="p-4 px-6 font-bold text-slate-900">Muhammad Tegar Rifaldi</td>
+                  <td class="p-4 px-6">2024</td>
+                  <td class="p-4 px-6 font-medium text-emerald-600"><i class="fa-solid fa-graduation-cap text-xs mr-1.5"></i> SMK Negeri 3 Yogyakarta</td>
+                </tr>
+                <tr class="hover:bg-orange-50/50 transition-custom">
+                  <td class="p-4 px-6 font-semibold">7</td>
+                  <td class="p-4 px-6 font-bold text-slate-900">Gabriel Krisna Bagus Oka</td>
+                  <td class="p-4 px-6">2024</td>
+                  <td class="p-4 px-6 font-medium text-emerald-600"><i class="fa-solid fa-graduation-cap text-xs mr-1.5"></i> SMK Negeri 1 Kasihan Bantul</td>
+                </tr>
+                <tr class="hover:bg-orange-50/50 transition-custom">
+                  <td class="p-4 px-6 font-semibold">8</td>
+                  <td class="p-4 px-6 font-bold text-slate-900">Achmad Sultan Al Habsy</td>
+                  <td class="p-4 px-6">2024</td>
+                  <td class="p-4 px-6 font-medium text-emerald-600"><i class="fa-solid fa-graduation-cap text-xs mr-1.5"></i> SMK Negeri 5 Yogyakarta</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PENDAFTARAN SPMB (PPDB) -->
+    <section id="spmb" class="section hidden transition-custom py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-orange-600 font-black uppercase tracking-widest text-xs">Penerimaan Siswa</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Informasi PPDB / SPMB</h2>
+          <div class="w-16 h-1.5 bg-orange-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          
+          <div class="bg-white rounded-2xl border border-slate-100 p-6 flex flex-col shadow-sm hover:shadow-md transition-custom">
+            <h4 class="font-extrabold text-slate-900 text-base mb-3 flex items-center gap-2"><i class="fa-solid fa-location-dot text-orange-500"></i> Jalur Zonasi</h4>
+            <div class="h-44 rounded-xl overflow-hidden border border-slate-100 mb-4 cursor-pointer" onclick="openFullImg('domisili.jpeg')">
+              <img src="domisili.jpeg" alt="Zonasi" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x300?text=Zonasi'">
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">Penerimaan berdasarkan radius titik koordinat kediaman utama pendaftar.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 p-6 flex flex-col shadow-sm hover:shadow-md transition-custom">
+            <h4 class="font-extrabold text-slate-900 text-base mb-3 flex items-center gap-2"><i class="fa-solid fa-hand-holding-hand text-emerald-600"></i> Jalur Afirmasi</h4>
+            <div class="h-44 rounded-xl overflow-hidden border border-slate-100 mb-4 cursor-pointer" onclick="openFullImg('afirmasi.jpeg')">
+              <img src="afirmasi.jpeg" alt="Afirmasi" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x300?text=Afirmasi'">
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">Khusus bagi keluarga pemegang kartu kesejahteraan sosial pemerintah & disabilitas ringan.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 p-6 flex flex-col shadow-sm hover:shadow-md transition-custom">
+            <h4 class="font-extrabold text-slate-900 text-base mb-3 flex items-center gap-2"><i class="fa-solid fa-truck-ramp-box text-blue-600"></i> Jalur Perpindahan</h4>
+            <div class="h-44 rounded-xl overflow-hidden border border-slate-100 mb-4 cursor-pointer" onclick="openFullImg('mutasi.jpeg')">
+              <img src="mutasi.jpeg" alt="Perpindahan" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x300?text=Mutasi'">
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">Calon peserta didik yang mengikuti perpindahan domisili tugas dinas orang tua.</p>
+          </div>
+
+          <div class="bg-white rounded-2xl border border-slate-100 p-6 flex flex-col shadow-sm hover:shadow-md transition-custom">
+            <h4 class="font-extrabold text-slate-900 text-base mb-3 flex items-center gap-2"><i class="fa-solid fa-trophy text-yellow-600"></i> Jalur Prestasi</h4>
+            <div class="h-44 rounded-xl overflow-hidden border border-slate-100 mb-4 cursor-pointer" onclick="openFullImg('prestasi.jpeg')">
+              <img src="prestasi.jpeg" alt="Prestasi" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x300?text=Prestasi'">
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">Penerimaan berpatokan pada akumulasi nilai rapor kelas atas serta sertifikat kejuaraan resmi.</p>
+          </div>
+
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="juknis_spmb.pdf" target="_blank" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-lg transition-custom flex items-center gap-2">
+            <i class="fa-solid fa-file-pdf"></i> Unduh Juknis Lengkap
+          </a>
+          <a href="https://sleman.spmb.id/" target="_blank" class="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl shadow-lg transition-custom flex items-center gap-2">
+            <i class="fa-solid fa-globe"></i> Portal Pendaftaran Sleman
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-white border-t-4 border-orange-500 pt-16 pb-8 mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+      
+      <!-- Kolom 1: Sekolah -->
+      <div>
+        <h3 class="font-black text-xl mb-4 text-orange-400">SMP Negeri 1 Cangkringan</h3>
+        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+          Berdedikasi mendidik, membimbing, serta mewujudkan tunas-tunas berprestasi yang berbudaya, tangguh, serta sadar lingkungan di lereng Merapi.
+        </p>
+        <span class="text-xs text-slate-500 font-medium uppercase tracking-widest">Vidya Giri Prastista</span>
+      </div>
+
+      <!-- Kolom 2: Kontak -->
+      <div>
+        <h4 class="font-bold text-lg mb-4 text-slate-200">Hubungi Kami</h4>
+        <ul class="space-y-3 text-slate-400 text-sm">
+          <li class="flex items-start gap-3"><i class="fa-solid fa-location-dot text-orange-500 mt-1"></i> <span>Watuadeg, Wukirsari, Cangkringan, Sleman, DI Yogyakarta 55583</span></li>
+          <li class="flex items-center gap-3"><i class="fa-solid fa-phone text-orange-500"></i> <span>(0274) 897524</span></li>
+          <li class="flex items-center gap-3"><i class="fa-solid fa-envelope text-orange-500"></i> <a href="mailto:smpn1cangkringan@gmail.com" class="hover:text-orange-400 transition-custom">smpn1cangkringan@gmail.com</a></li>
+        </ul>
+      </div>
+
+      <!-- Kolom 3: Link Berguna -->
+      <div>
+        <h4 class="font-bold text-lg mb-4 text-slate-200">Tautan Penting</h4>
+        <div class="grid grid-cols-2 gap-2 text-sm text-slate-400">
+          <a href="#" onclick="showSection('home')" class="hover:text-orange-400 transition-custom"><i class="fa-solid fa-angle-right text-xs"></i> Beranda</a>
+          <a href="#" onclick="showSection('profil')" class="hover:text-orange-400 transition-custom"><i class="fa-solid fa-angle-right text-xs"></i> Profil</a>
+          <a href="#" onclick="showSection('kurikulum')" class="hover:text-orange-400 transition-custom"><i class="fa-solid fa-angle-right text-xs"></i> Kurikulum</a>
+          <a href="#" onclick="showSection('guru')" class="hover:text-orange-400 transition-custom"><i class="fa-solid fa-angle-right text-xs"></i> Guru</a>
+          <a href="#" onclick="showSection('datasiswa')" class="hover:text-orange-400 transition-custom"><i class="fa-solid fa-angle-right text-xs"></i> Data Siswa</a>
+          <a href="#" onclick="showSection('spmb')" class="hover:text-orange-400 transition-custom"><i class="fa-solid fa-angle-right text-xs"></i> PPDB</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-slate-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+      <p>&copy; 2026 SMP Negeri 1 Cangkringan. Hak Cipta Dilindungi Undang-Undang.</p>
+      <p>Dikembangkan oleh Tim IT SPENECA</p>
+    </div>
+  </footer>
+
+  <!-- IMAGES LIGHTBOX MODAL (FOR PPDB IMAGES) -->
+  <div id="imageLightbox" class="hidden fixed inset-0 z-[100] bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4">
+    <button onclick="closeFullImg()" class="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-xl transition-custom"><i class="fa-solid fa-xmark"></i></button>
+    <div class="max-w-4xl max-h-[85vh]">
+      <img id="lightboxImg" src="" alt="Layar Penuh" class="max-w-full max-h-[85vh] object-contain rounded-xl">
+    </div>
+  </div>
+
+  <!-- JAVASCRIPTS -->
+  <script>
+    // Navigation Routing System
+    function showSection(id) {
+      // Hide all sections with fade
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.add('hidden');
+        section.classList.remove('active');
+      });
+      
+      // Show targeted section
+      const target = document.getElementById(id);
+      if(target) {
+        target.classList.remove('hidden');
+        setTimeout(() => target.classList.add('active'), 50);
+      }
+      
+      // Scroll to top smooth
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      
+      // Hide mobile menu if open
+      document.getElementById('mobileMenu').classList.add('hidden');
+      document.getElementById('menuIcon').className = 'fa-solid fa-bars text-xl';
+    }
+
+    // Toggle Mobile Navigation
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const icon = document.getElementById('menuIcon');
+      if(menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        icon.className = 'fa-solid fa-xmark text-xl';
+      } else {
+        menu.classList.add('hidden');
+        icon.className = 'fa-solid fa-bars text-xl';
+      }
+    }
+
+    // Toggle Mobile Accordion Dropdown
+    function toggleMobileDropdown(id) {
+      const el = document.getElementById(id);
+      const arrow = document.getElementById(id + 'Arrow');
+      if(el.classList.contains('hidden')) {
+        el.classList.remove('hidden');
+        arrow.style.transform = 'rotate(180deg)';
+      } else {
+        el.classList.add('hidden');
+        arrow.style.transform = 'rotate(0deg)';
+      }
+    }
+
+    // PDF Handlers (Presensi)
+    function bukaPDF(path) {
+      const viewer = document.getElementById('pdfViewer');
+      const frame = document.getElementById('pdfFrame');
+      frame.src = path;
+      viewer.style.display = 'block';
+      setTimeout(() => {
+        window.scrollTo({
+          top: viewer.offsetTop - 120,
+          behavior: 'smooth'
+        });
+      }, 100);
+    }
+
+    // PDF Handlers (Literasi & Soal)
+    function bukaSoal(file) {
+      if(!file) return;
+      const viewer = document.getElementById('soalViewer');
+      const frame = document.getElementById('soalFrame');
+      frame.src = file + "#toolbar=0&navpanes=0&scrollbar=0";
+      viewer.style.display = 'block';
+      setTimeout(() => {
+        window.scrollTo({
+          top: viewer.offsetTop - 120,
+          behavior: 'smooth'
+        });
+      }, 100);
+    }
+
+    // Lightbox Modal for PPDB/SPMB Images
+    function openFullImg(src) {
+      const lightbox = document.getElementById('imageLightbox');
+      const img = document.getElementById('lightboxImg');
+      img.src = src;
+      lightbox.classList.remove('hidden');
+    }
+    
+    function closeFullImg() {
+      document.getElementById('imageLightbox').classList.add('hidden');
+    }
+
+    // News Slider Engine (Desktop/Mobile Sidebar)
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('#newsSlider .slide');
+    let newsInterval = setInterval(nextSlide, 8000);
+
+    function updateSlides() {
+      slides.forEach((slide, idx) => {
+        if(idx === currentSlide) {
+          slide.classList.remove('opacity-0', 'pointer-events-none');
+          slide.classList.add('opacity-100', 'pointer-events-auto');
+        } else {
+          slide.classList.add('opacity-0', 'pointer-events-none');
+          slide.classList.remove('opacity-100', 'pointer-events-auto');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateSlides();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      updateSlides();
+    }
+
+    // Reset slide timer on manual action
+    const controlButtons = document.querySelectorAll('#newsSlider + div button');
+    controlButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        clearInterval(newsInterval);
+        newsInterval = setInterval(nextSlide, 8000);
+      });
+    });
+
+    // Default Initialization
+    document.addEventListener('DOMContentLoaded', () => {
+      showSection('home');
+    });
+  </script>
+</body>
+</html>
