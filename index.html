@@ -415,30 +415,21 @@
             
             <!-- Slide 2 -->
              <div class="slide absolute inset-x-6 top-6 bottom-6 flex flex-col opacity-0 transition-opacity duration-700 pointer-events-none">
-              <div class="h-44 rounded-xl overflow-hidden mb-4 shadow-sm">
-                <img src="17an.png" alt="Serah Terima Jabatan" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=400'">
+              <div class="h-72 bg-slate-900 rounded-xl overflow-hidden mb-4 shadow-inner flex items-center justify-center p-2">
+                <img src="loker.png" alt="Lowongan" class="w-full h-full object-contain" onerror="this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=400'">
               </div>
-              <span class="text-[10px] bg-orange-100 text-orange-700 font-bold px-2 py-1 rounded-md uppercase self-start mb-2">Agenda</span>
-              <h4 class="font-bold text-slate-800 text-base leading-snug mb-2">Dirgahayu Republik Indonwsia</h4>
-              <p class="text-sm text-slate-600 leading-relaxed line-clamp-4">“Bersatu, Berkarya, dan Terus Melangkah untuk Indonesia Maju”
-
-Keluarga Besar SMP Negeri 1 Cangkringan mengucapkan:
-
-SELAMAT HARI ULANG TAHUN KE-81
-KEMERDEKAAN REPUBLIK INDONESIA
-
-17 Agustus 1945 – 17 Agustus 2026</p>
+              <span class="text-[10px] bg-orange-100 text-orange-700 font-bold px-2 py-1 rounded-md uppercase self-start mb-2">Lowongan</span>
+              <h4 class="font-bold text-slate-800 text-base leading-snug mb-2"></h4>
+              <p class="text-sm text-slate-600 leading-relaxed line-clamp-4"></p>
             </div>
             <!-- Slide 3 -->
             <div class="slide absolute inset-x-6 top-6 bottom-6 flex flex-col opacity-0 transition-opacity duration-700 pointer-events-none">
               <div class="h-44 rounded-xl overflow-hidden mb-4 shadow-sm">
-                <img src="pramuka.png" alt="Serah Terima Jabatan" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=400'">
+                <img src="desiminasi.jpg" alt="Serah Terima Jabatan" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=400'">
               </div>
               <span class="text-[10px] bg-orange-100 text-orange-700 font-bold px-2 py-1 rounded-md uppercase self-start mb-2">Agenda</span>
-              <h4 class="font-bold text-slate-800 text-base leading-snug mb-2">Upacara Memperingati Hari  Pramuka</h4>
-              <p class="text-sm text-slate-600 leading-relaxed line-clamp-4">Selamat Memperingati Hari Pramuka!
-
-Mari jadikan semangat Pramuka sebagai inspirasi untuk membentuk generasi muda yang mandiri, disiplin, bertanggung jawab, tangguh, peduli, dan berjiwa gotong royong.</p>
+              <h4 class="font-bold text-slate-800 text-base leading-snug mb-2">Desiminasi 7KAIH</h4>
+              <p class="text-sm text-slate-600 leading-relaxed line-clamp-4"></p>
             </div>
            
 
@@ -1657,6 +1648,21 @@ Selamat Hari Jadi Daerah Istimewa Yogyakarta ke-14!
     </div>
   </div>
 
+  <!-- MODAL BERITA & KEGIATAN (FOTO BESAR + BERITA LENGKAP) -->
+  <div id="newsModal" class="hidden fixed inset-0 z-[110] bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-6" onclick="if(event.target===this) closeNewsModal()">
+    <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-3xl max-h-[92vh] overflow-y-auto">
+      <button onclick="closeNewsModal()" aria-label="Tutup" class="absolute top-3 right-3 z-10 w-10 h-10 rounded-full bg-slate-900/70 hover:bg-slate-900 text-white flex items-center justify-center transition-custom"><i class="fa-solid fa-xmark"></i></button>
+      <div class="bg-slate-900 flex items-center justify-center">
+        <img id="newsModalImg" src="" alt="" class="w-full max-h-[60vh] object-contain">
+      </div>
+      <div class="p-6 sm:p-8">
+        <span id="newsModalBadge" class="inline-block text-[10px] font-bold px-2 py-1 rounded-md uppercase mb-3"></span>
+        <h3 id="newsModalTitle" class="font-extrabold text-slate-800 text-xl sm:text-2xl leading-snug mb-3"></h3>
+        <p id="newsModalText" class="text-sm sm:text-base text-slate-600 leading-relaxed whitespace-pre-line"></p>
+      </div>
+    </div>
+  </div>
+
   <!-- JAVASCRIPTS -->
   <script>
     // Navigation Routing System
@@ -1777,7 +1783,7 @@ Selamat Hari Jadi Daerah Istimewa Yogyakarta ke-14!
     }
 
     // Reset slide timer on manual action
-    const controlButtons = document.querySelectorAll('#newsSlider + div button');
+    const controlButtons = document.querySelectorAll('button[onclick="prevSlide()"], button[onclick="nextSlide()"]');
     controlButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         clearInterval(newsInterval);
@@ -1785,9 +1791,57 @@ Selamat Hari Jadi Daerah Istimewa Yogyakarta ke-14!
       });
     });
 
+    // Klik foto berita -> foto membesar + berita lengkap
+    function openNewsModal(slide) {
+      const img = slide.querySelector('img');
+      const badge = slide.querySelector('span');
+      const title = slide.querySelector('h4');
+      const text = slide.querySelector('p');
+
+      const mImg = document.getElementById('newsModalImg');
+      mImg.src = img.currentSrc || img.src;
+      mImg.alt = img.alt;
+
+      const mBadge = document.getElementById('newsModalBadge');
+      mBadge.textContent = badge ? badge.textContent : '';
+      mBadge.className = (badge ? badge.className : '').replace('self-start', '').replace('mb-2', 'mb-3') + ' inline-block';
+      mBadge.style.display = badge ? '' : 'none';
+
+      document.getElementById('newsModalTitle').textContent = title ? title.textContent.trim() : '';
+      document.getElementById('newsModalText').textContent = text ? text.textContent.trim() : '';
+
+      document.getElementById('newsModal').classList.remove('hidden');
+      document.getElementById('newsModal').scrollTop = 0;
+      document.body.style.overflow = 'hidden';
+      clearInterval(newsInterval); // jeda slide otomatis saat membaca
+    }
+
+    function closeNewsModal() {
+      document.getElementById('newsModal').classList.add('hidden');
+      document.body.style.overflow = '';
+      clearInterval(newsInterval);
+      newsInterval = setInterval(nextSlide, 8000);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeNewsModal();
+    });
+
+    slides.forEach(slide => {
+      const imgBox = slide.querySelector('img') && slide.querySelector('img').parentElement;
+      if (!imgBox) return;
+      imgBox.classList.add('cursor-zoom-in');
+      imgBox.title = 'Klik untuk memperbesar & baca selengkapnya';
+      imgBox.addEventListener('click', () => openNewsModal(slide));
+    });
+
+    // Tampilkan slide pertama langsung saat halaman dibuka
+    updateSlides();
+
     // Default Initialization
     document.addEventListener('DOMContentLoaded', () => {
       showSection('home');
+      updateSlides();
     });
   </script>
 </body>
