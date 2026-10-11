@@ -1,542 +1,381 @@
-<!doctype html>
-<html lang="id">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galeri Video Kegiatan sekolah</title>
-  <script src="/_sdk/element_sdk.js"></script>
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dokumentasi Video – SMP Negeri 1 Cangkringan</title>
+  <meta name="description" content="Galeri dokumentasi video kegiatan SMP Negeri 1 Cangkringan, Sleman, DI Yogyakarta." />
+  <meta name="theme-color" content="#065f46" />
+  <link rel="icon" href="Logo sekolah SPENECA.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'] },
+          colors: {
+            brand: { 50:'#ecfdf5', 100:'#d1fae5', 500:'#10b981', 600:'#059669', 700:'#047857', 800:'#065f46', 900:'#064e3b', 950:'#022c22' },
+            accent: { 400:'#fbbf24', 500:'#f59e0b', 600:'#d97706' }
+          }
+        }
+      }
+    }
+  </script>
+
   <style>
-    body {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
-      min-height: 100%;
-      height: 100%;
+    html { scroll-padding-top: 88px; }
+    body { -webkit-font-smoothing: antialiased; }
+    .nav-link[aria-current="page"] { background: rgba(255,255,255,.12); }
+    .hero-pattern {
+      background-image: radial-gradient(circle at 20% 20%, rgba(251,191,36,.12), transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(16,185,129,.18), transparent 45%);
     }
-
-    html {
-      height: 100%;
+    .card-hover { transition: transform .3s ease, box-shadow .3s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -18px rgba(2,44,34,.35); }
+    .thumb video { transition: transform .5s ease; }
+    .thumb:hover video { transform: scale(1.06); }
+    .play-disc {
+      width: 4rem; height: 4rem; border-radius: 9999px; background: rgba(255,255,255,.95); color: #047857;
+      display: flex; align-items: center; justify-content: center; font-size: 1.4rem; padding-left: 4px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35); transition: transform .3s ease, background .3s ease, color .3s ease;
     }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    .header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .header h1 {
-      color: #ffffff;
-      font-size: 48px;
-      margin: 0 0 20px 0;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    }
-
-    .home-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background-color: #ffffff;
-      color: #ff6b35;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 25px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .home-button:hover {
-      background-color: #fff5f0;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .home-button:active {
-      transform: translateY(0);
-    }
-
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 30px;
-    }
-
-    .video-card {
-      background-color: #ffffff;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .video-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-    }
-
-    .video-wrapper {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
-      background-color: #000000;
-    }
-
-    .video-wrapper video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      cursor: pointer;
-    }
-
-    .video-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.95);
-      z-index: 1000;
-      display: none;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .video-overlay.active {
-      display: flex;
-    }
-
-    .video-overlay video {
-      max-width: 90%;
-      max-height: 90%;
-      width: auto;
-      height: auto;
-    }
-
-    .close-overlay {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background-color: rgba(255, 255, 255, 0.9);
-      color: #333333;
-      border: none;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      font-size: 24px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      z-index: 1001;
-    }
-
-    .close-overlay:hover {
-      background-color: #ffffff;
-      transform: scale(1.1);
-    }
-
-    .video-info {
-      padding: 20px;
-    }
-
-    .video-title {
-      font-size: 20px;
-      font-weight: 600;
-      color: #333333;
-      margin: 0 0 12px 0;
-    }
-
-    .play-button {
-      width: 100%;
-      background-color: #ff6b35;
-      color: #ffffff;
-      border: none;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .play-button:hover {
-      background-color: #ff5722;
-    }
-
-    .play-button.playing {
-      background-color: #666666;
-    }
-
-    .play-icon {
-      margin-right: 8px;
-    }
-
-    @media (max-width: 768px) {
-      .header h1 {
-        font-size: 36px;
-      }
-
-      .video-grid {
-        grid-template-columns: 1fr;
-      }
+    .thumb:hover .play-disc { transform: scale(1.12); background: #f59e0b; color: #022c22; }
+    :focus-visible { outline: 3px solid #fbbf24; outline-offset: 2px; border-radius: 6px; }
+    .fade-up { animation: fadeUp .5s ease both; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
     }
   </style>
-  <style>@view-transition { navigation: auto; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
- </head>
- <body>
-  <div id="video-overlay" class="video-overlay"><button class="close-overlay" id="close-overlay">✕</button>
+</head>
+
+<body class="font-sans bg-slate-50 text-slate-700 antialiased">
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[200] bg-white text-brand-800 font-bold px-4 py-2 rounded-lg shadow-lg">Lewati ke konten utama</a>
+
+  <!-- TOP BAR -->
+  <div class="hidden md:block bg-brand-950 text-brand-100 text-xs">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 h-10 flex items-center justify-between">
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-accent-400"></i> Watuadeg, Wukirsari, Cangkringan, Sleman</span>
+        <span class="flex items-center gap-2"><i class="fa-solid fa-phone text-accent-400"></i> (0274) 897524</span>
+        <a href="mailto:smpn1cangkringan@gmail.com" class="flex items-center gap-2 hover:text-white transition"><i class="fa-solid fa-envelope text-accent-400"></i> smpn1cangkringan@gmail.com</a>
+      </div>
+      <div class="flex items-center gap-5 font-semibold">
+        <a href="https://erapot-smp.netlify.app/" target="_blank" rel="noopener" class="hover:text-white transition">e-Rapor</a>
+        <a href="index.html#spmb" class="hover:text-white transition">Info SPMB</a>
+      </div>
+    </div>
   </div>
-  <div class="container">
-   <header class="header">
-    <h1 id="page-title">Galeri Video Kegiatan Sekolah</h1><button class="home-button" id="home-button"> <span class="play-icon">🏠</span> <span id="home-button-text">Kembali ke Beranda</span> </button>
-   </header>
-   <div class="video-grid">
-    <div class="video-card">
-        <div class="video-wrapper">
-            <video id="video-1" preload="metadata"><source src="video.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-info">
-            <h2 class="video-title" id="video-1-title">Pemilihan ketua dan wakil ketua osis</h2>
-            <button class="play-button" data-video="video-1">
-                <span class="play-icon">▶️</span> <span class="button-text">Putar Video</span>
-            </button>
-        </div>
-    </div>
 
-    <div class="video-card">
-        <div class="video-wrapper">
-            <video id="video-2" preload="metadata"><source src="clinup.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-info">
-            <h2 class="video-title" id="video-2-title">WORD CLEANUP DAY</h2>
-            <button class="play-button" data-video="video-2">
-                <span class="play-icon">▶️</span> <span class="button-text">Putar Video</span>
-            </button>
-        </div>
-    </div>
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-brand-800/95 backdrop-blur border-b border-white/10 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-[76px]">
+        <a href="index.html" class="flex items-center gap-3 group" aria-label="Beranda SMP Negeri 1 Cangkringan">
+          <span class="w-12 h-12 rounded-full bg-white p-1 shadow-inner flex-shrink-0 overflow-hidden group-hover:scale-105 transition">
+            <img src="Logo sekolah SPENECA.png" alt="Logo SMP Negeri 1 Cangkringan" class="w-full h-full object-contain">
+          </span>
+          <span class="leading-tight">
+            <span class="block text-white font-extrabold text-[15px] sm:text-lg tracking-tight">SMP Negeri 1 Cangkringan</span>
+            <span class="block text-accent-400 text-[10px] sm:text-[11px] font-semibold tracking-[.22em] uppercase mt-0.5">Vidya Giri Prastista</span>
+          </span>
+        </a>
 
-    <div class="video-card">
-        <div class="video-wrapper">
-            <video id="video-3" preload="metadata"><source src="Kreanova.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-info">
-            <h2 class="video-title" id="video-3-title">Kaweruh aksara jawa</h2>
-            <button class="play-button" data-video="video-3">
-                <span class="play-icon">▶️</span> <span class="button-text">Putar Video</span>
-            </button>
-        </div>
-    </div>
+        <nav id="desktopNav" class="hidden lg:flex items-center gap-0.5" aria-label="Navigasi utama"></nav>
 
-    <div class="video-card">
-        <div class="video-wrapper">
-            <video id="video-4" preload="metadata"><source src="AMT.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-info">
-            <h2 class="video-title" id="video-4-title">Achievement Motivation Training AMT</h2>
-            <button class="play-button" data-video="video-4">
-                <span class="play-icon">▶️</span> <span class="button-text">Putar Video</span>
-            </button>
-        </div>
+        <button id="menuBtn" class="lg:hidden w-11 h-11 rounded-lg text-white hover:bg-white/10 flex items-center justify-center" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">
+          <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+        </button>
+      </div>
     </div>
-
-    <div class="video-card">
-        <div class="video-wrapper">
-            <video id="video-5" preload="metadata"><source src="ISR2.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-info">
-            <h2 class="video-title" id="video-5-title">PERINGATAN Isra’ Mi’raj</h2>
-            <button class="play-button" data-video="video-5">
-                <span class="play-icon">▶️</span> <span class="button-text">Putar Video</span>
-            </button>
-        </div>
+    <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-slate-100 max-h-[calc(100vh-76px)] overflow-y-auto">
+      <div id="mobileNav" class="px-4 py-3 space-y-1"></div>
     </div>
+  </header>
 
-    <div class="video-card">
-        <div class="video-wrapper">
-            <video id="video-6" preload="metadata"><source src="adw.mp4" type="video/mp4"></video>
+  <main id="main">
+
+    <!-- HERO HALAMAN -->
+    <section class="relative overflow-hidden bg-brand-950">
+      <img src="sekolah.jpeg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-25" aria-hidden="true">
+      <div class="absolute inset-0 bg-gradient-to-r from-brand-950 via-brand-950/90 to-brand-900/60"></div>
+      <div class="absolute inset-0 hero-pattern"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-20">
+        <nav aria-label="Breadcrumb" class="text-xs text-brand-100/70 font-semibold flex items-center gap-2 mb-5">
+          <a href="index.html" class="hover:text-white transition"><i class="fa-solid fa-house mr-1"></i> Beranda</a>
+          <i class="fa-solid fa-chevron-right text-[9px]"></i>
+          <span>Galeri</span>
+          <i class="fa-solid fa-chevron-right text-[9px]"></i>
+          <span class="text-accent-400">Dokumentasi Video</span>
+        </nav>
+        <div class="flex flex-wrap items-end justify-between gap-6">
+          <div class="max-w-2xl">
+            <span class="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-accent-400 text-xs font-bold tracking-widest uppercase px-4 py-2 rounded-full backdrop-blur">
+              <i class="fa-solid fa-film"></i> Jejak Kegiatan
+            </span>
+            <h1 class="mt-5 text-3xl sm:text-5xl font-extrabold text-white leading-tight tracking-tight">Galeri <span class="text-accent-400">Video Kegiatan</span> Sekolah</h1>
+            <p class="mt-4 text-slate-200 leading-relaxed">Saksikan dokumentasi berbagai kegiatan, program, dan prestasi warga SMP Negeri 1 Cangkringan dalam bentuk video.</p>
+          </div>
+          <div class="flex items-center gap-4 bg-white/10 border border-white/15 backdrop-blur rounded-2xl px-6 py-4">
+            <span class="w-12 h-12 rounded-xl bg-accent-500 text-brand-950 flex items-center justify-center text-xl"><i class="fa-solid fa-circle-play"></i></span>
+            <div><div id="videoCount" class="text-3xl font-extrabold text-white leading-none">8</div><div class="text-xs text-brand-100/70 font-semibold mt-1">Video Dokumentasi</div></div>
+          </div>
         </div>
-        <div class="video-info">
-            <h2 class="video-title" id="video-6-title">Kegiatan Kerja bakti</h2>
-            <button class="play-button" data-video="video-6">
-                <span class="play-icon">▶️</span> <span class="button-text">Putar Video</span>
-            </button>
+      </div>
+    </section>
+
+    <!-- DAFTAR VIDEO -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <div class="flex flex-col sm:flex-row gap-4 items-center justify-between mb-10">
+        <div>
+          <span class="text-brand-600 font-extrabold uppercase tracking-widest text-xs">Koleksi</span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Semua Video</h2>
         </div>
+        <div class="relative w-full sm:w-80">
+          <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+          <input id="videoSearch" type="search" placeholder="Cari judul video…" aria-label="Cari video" class="w-full pl-10 pr-4 py-3 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-brand-600">
+        </div>
+      </div>
+
+      <div id="videoGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7"></div>
+      <p id="videoEmpty" class="hidden text-center text-slate-500 py-14">Video tidak ditemukan.</p>
+
+      <div class="mt-14 text-center">
+        <a href="index.html" class="inline-flex items-center gap-2 px-7 py-3.5 bg-brand-700 hover:bg-brand-800 text-white font-bold rounded-xl shadow-lg transition"><i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-950 text-white border-t-4 border-accent-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-10 grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="w-12 h-12 rounded-full bg-white p-1"><img src="Logo sekolah SPENECA.png" alt="" class="w-full h-full object-contain" loading="lazy"></span>
+          <h3 class="font-extrabold text-xl text-accent-400 leading-tight">SMP Negeri 1 Cangkringan</h3>
+        </div>
+        <p class="text-brand-100/70 text-sm leading-relaxed mb-4">Berdedikasi mendidik, membimbing, serta mewujudkan tunas-tunas berprestasi yang berbudaya, tangguh, dan sadar lingkungan di lereng Merapi.</p>
+        <span class="text-xs text-brand-100/50 font-semibold uppercase tracking-[.25em]">Vidya Giri Prastista</span>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg mb-4">Hubungi Kami</h4>
+        <ul class="space-y-3 text-brand-100/70 text-sm">
+          <li class="flex gap-3"><i class="fa-solid fa-location-dot text-accent-400 mt-1"></i><span>Watuadeg, Wukirsari, Cangkringan, Sleman, DI Yogyakarta 55583</span></li>
+          <li class="flex items-center gap-3"><i class="fa-solid fa-phone text-accent-400"></i><span>(0274) 897524</span></li>
+          <li class="flex items-center gap-3"><i class="fa-solid fa-envelope text-accent-400"></i><a href="mailto:smpn1cangkringan@gmail.com" class="hover:text-white transition">smpn1cangkringan@gmail.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-lg mb-4">Tautan Penting</h4>
+        <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-brand-100/70">
+          <a href="index.html" class="hover:text-accent-400 transition">Beranda</a>
+          <a href="index.html#profil" class="hover:text-accent-400 transition">Profil</a>
+          <a href="index.html#kurikulum" class="hover:text-accent-400 transition">Kurikulum</a>
+          <a href="index.html#guru" class="hover:text-accent-400 transition">Guru</a>
+          <a href="index.html#fasilitas" class="hover:text-accent-400 transition">Fasilitas</a>
+          <a href="index.html#galeri" class="hover:text-accent-400 transition">Galeri</a>
+          <a href="index.html#spmb" class="hover:text-accent-400 transition">SPMB</a>
+          <a href="https://erapot-smp.netlify.app/" target="_blank" rel="noopener" class="hover:text-accent-400 transition">e-Rapor</a>
+        </div>
+      </div>
     </div>
-
-     <div class="video-card">
-        <div class="video-wrapper">
-            <video id="video-7" preload="metadata"><source src="kesan pesan.mp4" type="video/mp4"></video>
-        </div>
-        <div class="video-info">
-            <h2 class="video-title" id="video-6-title">KESAN & PESAN SISWA SISWI MENGIKUTI TKAD</h2>
-            <button class="play-button" data-video="video-7">
-                <span class="play-icon">▶️</span> <span class="button-text">Putar Video</span>
-            </button>
-        </div>
+    <div class="border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-brand-100/50">
+        <p>&copy; 2026 SMP Negeri 1 Cangkringan. Hak cipta dilindungi undang-undang.</p>
+        <p>Dikembangkan oleh Tim IT SPENECA</p>
+      </div>
     </div>
+  </footer>
 
-     <div class="video-card">
-        <div class="video-wrapper">
-            <video id="video-8" preload="metadata"><source src="jiss1.mp4" type="video/mp4"></video>
+  <button id="toTop" class="hidden fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-accent-500 hover:bg-accent-400 text-brand-950 shadow-xl" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <!-- PEMUTAR VIDEO -->
+  <div id="player" class="hidden fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="playerTitle">
+    <div class="w-full max-w-5xl">
+      <div class="flex items-start justify-between gap-4 mb-3">
+        <div class="min-w-0">
+          <span id="playerCount" class="text-accent-400 text-xs font-bold uppercase tracking-widest"></span>
+          <h3 id="playerTitle" class="text-white font-extrabold text-lg sm:text-2xl leading-snug"></h3>
         </div>
-        <div class="video-info">
-            <h2 class="video-title" id="video-8-title">Jelajah Inovasi Sekolah Sleman</h2>
-            <button class="play-button" data-video="video-8">
-                <span class="play-icon">▶️</span> <span class="button-text">Putar Video</span>
-            </button>
-        </div>
+        <button id="playerClose" class="flex-shrink-0 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 text-white text-lg" aria-label="Tutup pemutar"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <video id="playerVideo" class="w-full max-h-[72vh] bg-black rounded-2xl shadow-2xl" controls playsinline preload="metadata"></video>
+      <div class="flex items-center justify-between gap-3 mt-4">
+        <button id="playerPrev" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition"><i class="fa-solid fa-backward-step"></i> <span class="hidden sm:inline">Sebelumnya</span></button>
+        <a id="playerDownload" href="#" download class="inline-flex items-center gap-2 bg-accent-500 hover:bg-accent-400 text-brand-950 text-sm font-bold px-4 py-2.5 rounded-xl transition"><i class="fa-solid fa-download"></i> Unduh</a>
+        <button id="playerNext" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-sm font-semibold px-4 py-2.5 rounded-xl transition"><span class="hidden sm:inline">Berikutnya</span> <i class="fa-solid fa-forward-step"></i></button>
+      </div>
     </div>
-
-    
-</div>
   </div>
+
   <script>
-    const defaultConfig = {
-      background_color: "#ff6b35",
-      button_color: "#ffffff",
-      card_color: "#ffffff",
-      text_color: "#333333",
-      accent_color: "#ff6b35",
-      font_family: "Segoe UI",
-      font_size: 16,
-      page_title: "Galeri Video",
-      home_button_text: "Kembali ke Beranda",
-      video_1_title: "Video Animasi 1",
-      video_2_title: "Video Animasi 2",
-      video_3_title: "Video Pendek 1",
-      video_4_title: "Video Pendek 2"
-    };
+  /* ================= DATA ================= */
+  const VIDEOS = [
+    { src: 'video.mp4',      title: 'Pemilihan Ketua dan Wakil Ketua OSIS' },
+    { src: 'clinup.mp4',     title: 'World Cleanup Day' },
+    { src: 'Kreanova.mp4',   title: 'Kaweruh Aksara Jawa' },
+    { src: 'AMT.mp4',        title: 'Achievement Motivation Training (AMT)' },
+    { src: 'ISR2.mp4',       title: 'Peringatan Isra’ Mi’raj' },
+    { src: 'adw.mp4',        title: 'Kegiatan Kerja Bakti' },
+    { src: 'kesan pesan.mp4', title: 'Kesan & Pesan Siswa-Siswi Mengikuti TKAD' },
+    { src: 'jiss1.mp4',      title: 'Jelajah Inovasi Sekolah Sleman' }
+  ];
 
-    let config = {};
-    let currentlyPlaying = null;
+  // Menu sama dengan index.html; tautan halaman ini diarahkan ke index.html#bagian
+  const NAV = [
+    { label: 'Beranda', icon: 'fa-house', href: 'index.html' },
+    { label: 'Profil', icon: 'fa-building-columns', href: 'index.html#profil' },
+    { label: 'Akademik', icon: 'fa-book-open', children: [
+      { label: 'Kurikulum', icon: 'fa-scroll', href: 'index.html#kurikulum' },
+      { label: 'Jadwal Pelajaran', icon: 'fa-calendar-days', href: 'index.html#jadwal' },
+      { label: 'Soal Literasi', icon: 'fa-pen-to-square', href: 'index.html#Soalliterasi' } ] },
+    { label: 'Guru & Sarana', icon: 'fa-school', children: [
+      { label: 'Daftar Guru', icon: 'fa-users', href: 'index.html#guru' },
+      { label: 'Fasilitas Sekolah', icon: 'fa-building', href: 'index.html#fasilitas' } ] },
+    { label: 'Galeri', icon: 'fa-images', children: [
+      { label: 'Foto Galeri', icon: 'fa-image', href: 'index.html#galeri' },
+      { label: 'Dokumentasi Video', icon: 'fa-video', href: 'video.html', current: true } ] },
+    { label: 'Data Sekolah', icon: 'fa-database', children: [
+      { label: 'Data Siswa Aktif', icon: 'fa-file-invoice', href: 'index.html#datasiswa' },
+      { label: 'Data Alumni', icon: 'fa-graduation-cap', href: 'index.html#dataalumni' },
+      { label: 'Tata Tertib', icon: 'fa-scale-balanced', href: 'index.html#tatatertib' } ] },
+    { label: 'Informasi', icon: 'fa-circle-info', children: [
+      { label: 'Informasi PPDB/SPMB', icon: 'fa-user-plus', href: 'index.html#spmb' },
+      { label: 'Portal e-Rapor', icon: 'fa-chart-line', href: 'https://erapot-smp.netlify.app/', external: true } ] }
+  ];
 
-    async function onConfigChange(newConfig) {
-      config = newConfig;
-      
-      const customFont = config.font_family || defaultConfig.font_family;
-      const baseFontSize = config.font_size || defaultConfig.font_size;
-      const baseFontStack = 'Tahoma, Geneva, Verdana, sans-serif';
-      
-      document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
-      document.body.style.background = `linear-gradient(135deg, ${config.background_color || defaultConfig.background_color} 0%, ${config.accent_color || defaultConfig.accent_color} 100%)`;
-      
-      const pageTitle = document.getElementById('page-title');
-      pageTitle.textContent = config.page_title || defaultConfig.page_title;
-      pageTitle.style.fontSize = `${baseFontSize * 3}px`;
-      pageTitle.style.fontFamily = `${customFont}, ${baseFontStack}`;
-      
-      const homeButton = document.getElementById('home-button');
-      homeButton.style.backgroundColor = config.button_color || defaultConfig.button_color;
-      homeButton.style.color = config.accent_color || defaultConfig.accent_color;
-      homeButton.style.fontSize = `${baseFontSize}px`;
-      
-      const homeButtonText = document.getElementById('home-button-text');
-      homeButtonText.textContent = config.home_button_text || defaultConfig.home_button_text;
-      
-      const videoCards = document.querySelectorAll('.video-card');
-      videoCards.forEach(card => {
-        card.style.backgroundColor = config.card_color || defaultConfig.card_color;
-      });
-      
-      const videoTitles = document.querySelectorAll('.video-title');
-      videoTitles.forEach((title, index) => {
-        const configKey = `video_${index + 1}_title`;
-        title.textContent = config[configKey] || defaultConfig[configKey];
-        title.style.color = config.text_color || defaultConfig.text_color;
-        title.style.fontSize = `${baseFontSize * 1.25}px`;
-        title.style.fontFamily = `${customFont}, ${baseFontStack}`;
-      });
-      
-      const playButtons = document.querySelectorAll('.play-button');
-      playButtons.forEach(button => {
-        if (!button.classList.contains('playing')) {
-          button.style.backgroundColor = config.accent_color || defaultConfig.accent_color;
-        }
-        button.style.fontSize = `${baseFontSize}px`;
-      });
-    }
+  /* ================= HELPERS ================= */
+  const $  = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const pad = n => String(n).padStart(2, '0');
+  const enc = s => encodeURI(s);   // aman untuk nama file ber-spasi
 
-    function mapToCapabilities(config) {
-      return {
-        recolorables: [
-          {
-            get: () => config.background_color || defaultConfig.background_color,
-            set: (value) => {
-              config.background_color = value;
-              window.elementSdk.setConfig({ background_color: value });
-            }
-          },
-          {
-            get: () => config.card_color || defaultConfig.card_color,
-            set: (value) => {
-              config.card_color = value;
-              window.elementSdk.setConfig({ card_color: value });
-            }
-          },
-          {
-            get: () => config.text_color || defaultConfig.text_color,
-            set: (value) => {
-              config.text_color = value;
-              window.elementSdk.setConfig({ text_color: value });
-            }
-          },
-          {
-            get: () => config.accent_color || defaultConfig.accent_color,
-            set: (value) => {
-              config.accent_color = value;
-              window.elementSdk.setConfig({ accent_color: value });
-            }
-          },
-          {
-            get: () => config.button_color || defaultConfig.button_color,
-            set: (value) => {
-              config.button_color = value;
-              window.elementSdk.setConfig({ button_color: value });
-            }
-          }
-        ],
-        borderables: [],
-        fontEditable: {
-          get: () => config.font_family || defaultConfig.font_family,
-          set: (value) => {
-            config.font_family = value;
-            window.elementSdk.setConfig({ font_family: value });
-          }
-        },
-        fontSizeable: {
-          get: () => config.font_size || defaultConfig.font_size,
-          set: (value) => {
-            config.font_size = value;
-            window.elementSdk.setConfig({ font_size: value });
-          }
-        }
-      };
-    }
-
-    function mapToEditPanelValues(config) {
-      return new Map([
-        ["page_title", config.page_title || defaultConfig.page_title],
-        ["home_button_text", config.home_button_text || defaultConfig.home_button_text],
-        ["video_1_title", config.video_1_title || defaultConfig.video_1_title],
-        ["video_2_title", config.video_2_title || defaultConfig.video_2_title],
-        ["video_3_title", config.video_3_title || defaultConfig.video_3_title],
-        ["video_4_title", config.video_4_title || defaultConfig.video_4_title]
-      ]);
-    }
-
-    if (window.elementSdk) {
-      window.elementSdk.init({
-        defaultConfig,
-        onConfigChange,
-        mapToCapabilities,
-        mapToEditPanelValues
-      });
-    }
-
-    document.getElementById('home-button').addEventListener('click', () => {
-  window.location.href = 'index.html';
-});
-
-    const videoOverlay = document.getElementById('video-overlay');
-    const closeOverlay = document.getElementById('close-overlay');
-    let overlayVideo = null;
-
-    function openVideoOverlay(video) {
-      const videoClone = video.cloneNode(true);
-      videoClone.controls = true;
-      videoClone.currentTime = video.currentTime;
-      
-      videoOverlay.innerHTML = '';
-      videoOverlay.appendChild(closeOverlay);
-      videoOverlay.appendChild(videoClone);
-      videoOverlay.classList.add('active');
-      
-      videoClone.play();
-      overlayVideo = videoClone;
-      
-      video.pause();
-    }
-
-    function closeVideoOverlay() {
-      if (overlayVideo) {
-        overlayVideo.pause();
-        overlayVideo = null;
-      }
-      videoOverlay.classList.remove('active');
-      
-      if (currentlyPlaying) {
-        const button = document.querySelector(`[data-video="${currentlyPlaying.id}"]`);
-        button.classList.remove('playing');
-        button.querySelector('.button-text').textContent = 'Putar Video';
-        button.querySelector('.play-icon').textContent = '▶️';
-        button.style.backgroundColor = config.accent_color || defaultConfig.accent_color;
-        currentlyPlaying = null;
-      }
-    }
-
-    closeOverlay.addEventListener('click', closeVideoOverlay);
-    
-    videoOverlay.addEventListener('click', (e) => {
-      if (e.target === videoOverlay) {
-        closeVideoOverlay();
+  /* ================= NAVIGASI ================= */
+  function buildNav() {
+    const desk = $('#desktopNav'), mob = $('#mobileNav');
+    const attrs = it => `href="${it.href}" ${it.external ? 'target="_blank" rel="noopener"' : ''} ${it.current ? 'aria-current="page"' : ''}`;
+    NAV.forEach((item, i) => {
+      if (!item.children) {
+        desk.insertAdjacentHTML('beforeend',
+          `<a ${attrs(item)} class="nav-link px-3.5 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg text-sm font-semibold flex items-center gap-2 transition"><i class="fa-solid ${item.icon} text-accent-400 text-xs"></i>${item.label}</a>`);
+        mob.insertAdjacentHTML('beforeend',
+          `<a ${attrs(item)} class="flex items-center gap-3 p-3 rounded-xl font-semibold text-slate-700 hover:bg-brand-50"><i class="fa-solid ${item.icon} w-5 text-brand-600"></i>${item.label}</a>`);
+      } else {
+        const right = i >= NAV.length - 2 ? 'right-0' : 'left-0';
+        const active = item.children.some(c => c.current);
+        desk.insertAdjacentHTML('beforeend', `
+          <div class="relative group">
+            <button class="nav-link px-3.5 py-2 text-white/90 hover:text-white hover:bg-white/10 rounded-lg text-sm font-semibold flex items-center gap-2 transition ${active ? 'bg-white/12' : ''}" aria-haspopup="true"><i class="fa-solid ${item.icon} text-accent-400 text-xs"></i>${item.label}<i class="fa-solid fa-chevron-down text-[9px] opacity-70"></i></button>
+            <div class="absolute ${right} top-full pt-2 w-60 hidden group-hover:block group-focus-within:block z-50">
+              <div class="bg-white rounded-xl shadow-2xl border border-slate-100 py-2 overflow-hidden">
+                ${item.children.map(c => `<a ${attrs(c)} class="flex items-center gap-3 px-4 py-2.5 text-sm font-medium ${c.current ? 'text-brand-800 bg-brand-50' : 'text-slate-700'} hover:bg-brand-50 hover:text-brand-800 transition"><i class="fa-solid ${c.icon} w-4 text-accent-500"></i>${c.label}</a>`).join('')}
+              </div>
+            </div>
+          </div>`);
+        mob.insertAdjacentHTML('beforeend', `
+          <div>
+            <button class="acc-btn w-full flex items-center justify-between p-3 rounded-xl font-semibold text-slate-700 hover:bg-brand-50" aria-expanded="${active}">
+              <span class="flex items-center gap-3"><i class="fa-solid ${item.icon} w-5 text-brand-600"></i>${item.label}</span>
+              <i class="fa-solid fa-chevron-down text-xs transition-transform" style="${active ? 'transform:rotate(180deg)' : ''}"></i>
+            </button>
+            <div class="${active ? '' : 'hidden'} pl-8 pb-1 space-y-0.5">
+              ${item.children.map(c => `<a ${attrs(c)} class="flex items-center gap-3 py-2.5 px-3 rounded-lg text-sm ${c.current ? 'text-brand-800 bg-brand-50 font-semibold' : 'text-slate-600'} hover:text-brand-800 hover:bg-brand-50"><i class="fa-solid ${c.icon} w-4 text-accent-500"></i>${c.label}</a>`).join('')}
+            </div>
+          </div>`);
       }
     });
+    $$('.acc-btn', mob).forEach(btn => btn.addEventListener('click', () => {
+      const panel = btn.nextElementSibling, open = panel.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', open);
+      btn.lastElementChild.style.transform = open ? 'rotate(180deg)' : '';
+    }));
+  }
+  $('#menuBtn').addEventListener('click', () => {
+    const menu = $('#mobileMenu'), open = menu.classList.toggle('hidden') === false;
+    $('#menuIcon').className = open ? 'fa-solid fa-xmark text-xl' : 'fa-solid fa-bars text-xl';
+    $('#menuBtn').setAttribute('aria-expanded', open);
+  });
 
-    const playButtons = document.querySelectorAll('.play-button');
-    
-    playButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const videoId = button.getAttribute('data-video');
-        const video = document.getElementById(videoId);
-        const buttonText = button.querySelector('.button-text');
-        const playIcon = button.querySelector('.play-icon');
-        
-        if (currentlyPlaying && currentlyPlaying !== video) {
-          currentlyPlaying.pause();
-          currentlyPlaying.currentTime = 0;
-          const otherButton = document.querySelector(`[data-video="${currentlyPlaying.id}"]`);
-          otherButton.classList.remove('playing');
-          otherButton.querySelector('.button-text').textContent = 'Putar Video';
-          otherButton.querySelector('.play-icon').textContent = '▶️';
-          otherButton.style.backgroundColor = config.accent_color || defaultConfig.accent_color;
-        }
-        
-        button.classList.add('playing');
-        buttonText.textContent = 'Memutar...';
-        playIcon.textContent = '⏸️';
-        button.style.backgroundColor = '#666666';
-        currentlyPlaying = video;
-        
-        openVideoOverlay(video);
-      });
-    });
+  /* ================= DAFTAR VIDEO ================= */
+  function renderVideos() {
+    const q = $('#videoSearch').value.trim().toLowerCase();
+    const list = VIDEOS.map((v, i) => ({ ...v, i })).filter(v => v.title.toLowerCase().includes(q));
+    $('#videoGrid').innerHTML = list.map((v, k) => `
+      <article class="fade-up bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm card-hover" style="animation-delay:${k * 60}ms">
+        <button class="thumb relative block w-full aspect-video bg-slate-900 overflow-hidden group" data-play="${v.i}" aria-label="Putar video: ${esc(v.title)}">
+          <video src="${enc(v.src)}#t=0.8" preload="metadata" muted playsinline tabindex="-1" class="absolute inset-0 w-full h-full object-cover pointer-events-none"></video>
+          <span class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></span>
+          <span class="absolute inset-0 flex items-center justify-center"><span class="play-disc"><i class="fa-solid fa-play"></i></span></span>
+          <span class="absolute top-3 left-3 bg-brand-800/90 text-white text-[11px] font-bold px-2.5 py-1 rounded-full tracking-wide">#${pad(v.i + 1)}</span>
+        </button>
+        <div class="p-5">
+          <h3 class="font-extrabold text-slate-900 text-lg leading-snug min-h-[3.5rem]">${esc(v.title)}</h3>
+          <button data-play="${v.i}" class="mt-4 w-full inline-flex items-center justify-center gap-2 bg-brand-700 hover:bg-brand-800 text-white font-bold text-sm py-3 rounded-xl transition">
+            <i class="fa-solid fa-circle-play"></i> Putar Video
+          </button>
+        </div>
+      </article>`).join('');
+    $('#videoEmpty').classList.toggle('hidden', list.length > 0);
+    $('#videoCount').textContent = VIDEOS.length;
+  }
+  $('#videoSearch').addEventListener('input', renderVideos);
 
-    document.querySelectorAll('video').forEach(video => {
-      video.addEventListener('ended', () => {
-        const button = document.querySelector(`[data-video="${video.id}"]`);
-        button.classList.remove('playing');
-        button.querySelector('.button-text').textContent = 'Putar Video';
-        button.querySelector('.play-icon').textContent = '▶️';
-        button.style.backgroundColor = config.accent_color || defaultConfig.accent_color;
-        currentlyPlaying = null;
-      });
-    });
+  /* ================= PEMUTAR ================= */
+  let cur = 0;
+  const player = $('#player'), pv = $('#playerVideo');
+
+  function loadVideo(i) {
+    cur = (i + VIDEOS.length) % VIDEOS.length;
+    const v = VIDEOS[cur];
+    pv.src = enc(v.src);
+    $('#playerTitle').textContent = v.title;
+    $('#playerCount').textContent = `Video ${cur + 1} dari ${VIDEOS.length}`;
+    $('#playerDownload').href = enc(v.src);
+    $('#playerDownload').setAttribute('download', v.src);
+    pv.play().catch(() => {});
+  }
+  function openPlayer(i) {
+    player.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    loadVideo(i);
+    $('#playerClose').focus();
+  }
+  function closePlayer() {
+    pv.pause(); pv.removeAttribute('src'); pv.load();
+    player.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-play]');
+    if (b) openPlayer(+b.dataset.play);
+  });
+  $('#playerClose').addEventListener('click', closePlayer);
+  $('#playerPrev').addEventListener('click', () => loadVideo(cur - 1));
+  $('#playerNext').addEventListener('click', () => loadVideo(cur + 1));
+  pv.addEventListener('ended', () => { if (cur < VIDEOS.length - 1) loadVideo(cur + 1); });
+  player.addEventListener('click', e => { if (e.target === player) closePlayer(); });
+  document.addEventListener('keydown', e => {
+    if (player.classList.contains('hidden')) return;
+    if (e.key === 'Escape') closePlayer();
+    if (e.key === 'ArrowRight') loadVideo(cur + 1);
+    if (e.key === 'ArrowLeft') loadVideo(cur - 1);
+  });
+
+  /* ================= INIT ================= */
+  const toTop = $('#toTop');
+  window.addEventListener('scroll', () => toTop.classList.toggle('hidden', window.scrollY < 500), { passive: true });
+  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  buildNav();
+  renderVideos();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99cd7d79d799d8ca',t:'MTc2Mjg2MDk2OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
